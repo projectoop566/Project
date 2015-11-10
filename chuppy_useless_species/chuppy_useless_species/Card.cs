@@ -23,7 +23,13 @@ namespace chuppy_useless_species
         }
         public Card()
         {
-            _Level = 0;
+            _Level = 1;
+            _PictureID = "human_lv1_1.png";
+        }
+        public Card(int l,string pid)
+        {
+            _Level = l;
+            _PictureID = pid;
         }
     }
 }
