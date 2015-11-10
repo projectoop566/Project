@@ -8,5 +8,28 @@ namespace chuppy_useless_species
 {
     class Player
     {
+        
+        private string _Name;
+        private string _Winscore;
+        private string _Lossscore;
+
+        public string Name
+        {
+            get { return _Name; }
+            set { _Name = value; }
+        }
+        public string Winscore
+        {
+            get { return _Winscore; }
+            set { }
+        }
+        public string Lossscore
+        {
+            get { return _Lossscore; }
+            set { }
+        }
+
+
+
     }
 }

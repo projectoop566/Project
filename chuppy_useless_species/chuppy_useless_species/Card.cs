@@ -8,5 +8,22 @@ namespace chuppy_useless_species
 {
     class Card
     {
+        private int _Level;// Level = value of attack
+        private string _PictureID; //for picture
+        
+        public string PictureID
+        {
+            get { return _PictureID; }
+            set { _PictureID = value; }
+        }
+        public int Level
+        {
+            get { return _Level; }
+            set { _Level = value; }
+        }
+        public Card()
+        {
+            _Level = 0;
+        }
     }
 }
