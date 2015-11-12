@@ -69,6 +69,26 @@ namespace chuppy_useless_species
                 _card[3] = new Card(5, "spirit_lv5_4.png");
                 _card[4] = new Card(5, "spirit_lv5_5.png");
             }
-        }
+        } 
+        public void shuffle()  //shuffle 5 card 
+        {
+            int counter = 0;
+            int length = 5;
+            Random random = new Random();
+            Card[] array = new Card[length];
+            while (counter < length)
+            {
+                int index = random.Next(0, 5);
+                Card card = _card[index];
+                if (!array.Contains(card))
+                {
+                    array[counter] = card;
+                    counter++;
+                }
+            }
+            _card = array;
+        } 
+
+
     }
 }

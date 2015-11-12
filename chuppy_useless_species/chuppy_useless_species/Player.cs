@@ -12,6 +12,7 @@ namespace chuppy_useless_species
         private string _Name;
         private string _Winscore;
         private string _Lossscore;
+        private Deck mydeck = new Deck();
 
         public string Name
         {
