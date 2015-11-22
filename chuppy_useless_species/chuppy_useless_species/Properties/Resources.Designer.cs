@@ -63,6 +63,16 @@ namespace chuppy_useless_species.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg_select {
+            get {
+                object obj = ResourceManager.GetObject("bg_select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bgcard {
             get {
                 object obj = ResourceManager.GetObject("bgcard", resourceCulture);
@@ -76,6 +86,36 @@ namespace chuppy_useless_species.Properties {
         internal static System.Drawing.Bitmap bgcard2 {
             get {
                 object obj = ResourceManager.GetObject("bgcard2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap human_cover {
+            get {
+                object obj = ResourceManager.GetObject("human_cover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap human_cover_c {
+            get {
+                object obj = ResourceManager.GetObject("human_cover_c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skel1 {
+            get {
+                object obj = ResourceManager.GetObject("skel1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

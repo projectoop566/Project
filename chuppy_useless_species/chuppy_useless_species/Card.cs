@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 using System.Threading.Tasks;
 
 namespace chuppy_useless_species
@@ -10,7 +11,10 @@ namespace chuppy_useless_species
     {
         private int _Level;// Level = value of attack
         private string _PictureID_card; //for picture
-        
+        public Image backcard = Image.FromFile(@"../../images/bgcard.png");
+        public Image imagecard;
+        public Image imagebattlecard;
+
         public string PictureID_card
         {
             get { return _PictureID_card; }
@@ -24,12 +28,13 @@ namespace chuppy_useless_species
         public Card()
         {
             _Level = 1;
-            _PictureID_card = "human_lv1_1.png";
+            imagecard = Image.FromFile(@"../../images/card/human/human1.png");
         }
-        public Card(int l,string pid)
+        public Card(int l,Image pid,Image pid_ani)
         {
             _Level = l;
-            _PictureID_card = pid;
+            imagecard = pid;
+            imagebattlecard = pid_ani;
         }
     }
 }

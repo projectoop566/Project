@@ -12,8 +12,8 @@ namespace chuppy_useless_species
         private string _Name;
         private string _Winscore;
         private string _Lossscore;
-        private Deck mydeck = new Deck();
-
+        public Deck mydeck = new Deck();
+              
         public string Name
         {
             get { return _Name; }
@@ -28,9 +28,21 @@ namespace chuppy_useless_species
         {
             get { return _Lossscore; }
             set { }
+        } 
+        public Player()
+        {
+            _Winscore = _Lossscore = "0";
+        }
+        public void setname(string name) //setplayer name
+        {
+            _Name = name;
+        }
+        public void creatdeck(int c)
+        {
+            mydeck = new Deck(c);
+            
         }
 
-
-
+        
     }
 }
