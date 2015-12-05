@@ -22,14 +22,16 @@ namespace chuppy_useless_species
         bool checkp1_selectcard_battle =false;
         bool checkp2_selectcard_battle = false;
 
-
-
         Card[] fighter = new Card[2];
 
         public Form1()
         {
             InitializeComponent();
-            m = c.notifymodeltoview();        
+            m = c.notifymodeltoview();
+            Enter_turn.Hide();
+            p1_Select.Hide();
+            P2_Select.Hide();
+            start.Hide();
         }  
         public void openview()
         {
@@ -41,17 +43,13 @@ namespace chuppy_useless_species
 
             if(checkp1_turn==true)
             {
-
-                p1_screen.Visible = false;
-                p2_screen.Visible = true;
-                p2_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;                         
+                playerturn.Text = "Player 1";
+                                    
 
             }
             else if (checkp1_turn == false )
             {
-                p2_screen.Visible = false;
-                p1_screen.Visible = true;
-                p1_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;                                            
+                playerturn.Text = "Player 2";
             }
         } 
         public void showcard()
@@ -129,7 +127,7 @@ namespace chuppy_useless_species
         private void p1_slot1_Click(object sender, EventArgs e)
         {
 
-                fighter[0] = m._player[0].mydeck.drawcard();
+            fighter[0] = m._player[0].mydeck.drawcard();
             checkp1_selectcard_battle = true;
         }
 
@@ -159,10 +157,19 @@ namespace chuppy_useless_species
         }
 
         private void start_Click(object sender, EventArgs e)
-        {                 
+        {
+            //Hide show button
+            showc.Enabled = false;
+            showc.Hide();
+            Enter_turn.Show();
+            p1_Select.Show();
+            P2_Select.Show();
+            start.Hide();
+                    
             c.randomcard();
             backcard();
             updatecard();
+
         }
         public void resettext(int x)
         {
@@ -186,9 +193,11 @@ namespace chuppy_useless_species
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {              
+        {
+            start.Show(); 
             nameclan();
             showcard();
+            showc.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -223,17 +232,32 @@ namespace chuppy_useless_species
 
         private void battlestart()
         {
-            p1_screen.Visible = true;
-            p2_screen.Visible = true;
+            //p1_screen.Visible = true;
+            //p2_screen.Visible = true;
 
             p1_battlepic.Visible = true;
             p2_battlepic.Visible = true;
-
-            p1_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
-            p2_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
-
+            p1_lvcard.Text = "LV Card : " + fighter[0].Level;
+            p2_lvcard.Text = "LV Card : " + fighter[1].Level;
+            //p1_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
+            //p2_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
             p1_battlepic.Image = fighter[0].imagebattlecard;
             p2_battlepic.Image = fighter[1].imagebattlecard;
+        }
+
+        private void p1_battlepic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void p1_screen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clan_trun_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

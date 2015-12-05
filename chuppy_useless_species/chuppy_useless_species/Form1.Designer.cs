@@ -37,8 +37,6 @@
             this.start = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.showc = new System.Windows.Forms.Button();
-            this.p1_screen = new System.Windows.Forms.PictureBox();
-            this.p2_screen = new System.Windows.Forms.PictureBox();
             this.p2_clanpic = new System.Windows.Forms.PictureBox();
             this.p2_skill3 = new System.Windows.Forms.PictureBox();
             this.p2_skill2 = new System.Windows.Forms.PictureBox();
@@ -57,13 +55,14 @@
             this.p1_slot2 = new System.Windows.Forms.PictureBox();
             this.p1_slot1 = new System.Windows.Forms.PictureBox();
             this.p1_clanpic = new System.Windows.Forms.PictureBox();
-            this.clan_trun = new System.Windows.Forms.PictureBox();
             this.p1_Select = new System.Windows.Forms.Button();
             this.P2_Select = new System.Windows.Forms.Button();
+            this.playerturn = new System.Windows.Forms.Label();
             this.p1_battlepic = new System.Windows.Forms.PictureBox();
             this.p2_battlepic = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.p1_screen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2_screen)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.p1_lvcard = new System.Windows.Forms.Label();
+            this.p2_lvcard = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.p2_clanpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_skill3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_skill2)).BeginInit();
@@ -82,9 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_clanpic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clan_trun)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_battlepic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_battlepic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -141,9 +140,9 @@
             this.player1clan.AutoSize = true;
             this.player1clan.Location = new System.Drawing.Point(57, 69);
             this.player1clan.Name = "player1clan";
-            this.player1clan.Size = new System.Drawing.Size(35, 13);
+            this.player1clan.Size = new System.Drawing.Size(45, 13);
             this.player1clan.TabIndex = 24;
-            this.player1clan.Text = "label4";
+            this.player1clan.Text = "Player 1";
             this.player1clan.Click += new System.EventHandler(this.label4_Click);
             // 
             // player2clan
@@ -151,9 +150,9 @@
             this.player2clan.AutoSize = true;
             this.player2clan.Location = new System.Drawing.Point(613, 69);
             this.player2clan.Name = "player2clan";
-            this.player2clan.Size = new System.Drawing.Size(35, 13);
+            this.player2clan.Size = new System.Drawing.Size(45, 13);
             this.player2clan.TabIndex = 25;
-            this.player2clan.Text = "label4";
+            this.player2clan.Text = "Player 2";
             this.player2clan.Click += new System.EventHandler(this.player2clan_Click);
             // 
             // start
@@ -180,28 +179,6 @@
             this.showc.Text = "SHOWCARD";
             this.showc.UseVisualStyleBackColor = true;
             this.showc.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // p1_screen
-            // 
-            this.p1_screen.Location = new System.Drawing.Point(8, 53);
-            this.p1_screen.Name = "p1_screen";
-            this.p1_screen.Size = new System.Drawing.Size(550, 381);
-            this.p1_screen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p1_screen.TabIndex = 29;
-            this.p1_screen.TabStop = false;
-            this.p1_screen.Visible = false;
-            // 
-            // p2_screen
-            // 
-            this.p2_screen.Enabled = false;
-            this.p2_screen.Location = new System.Drawing.Point(564, 53);
-            this.p2_screen.Name = "p2_screen";
-            this.p2_screen.Size = new System.Drawing.Size(550, 381);
-            this.p2_screen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.p2_screen.TabIndex = 28;
-            this.p2_screen.TabStop = false;
-            this.p2_screen.Visible = false;
-            this.p2_screen.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // p2_clanpic
             // 
@@ -373,14 +350,6 @@
             this.p1_clanpic.TabIndex = 2;
             this.p1_clanpic.TabStop = false;
             // 
-            // clan_trun
-            // 
-            this.clan_trun.Location = new System.Drawing.Point(104, 14);
-            this.clan_trun.Name = "clan_trun";
-            this.clan_trun.Size = new System.Drawing.Size(46, 25);
-            this.clan_trun.TabIndex = 1;
-            this.clan_trun.TabStop = false;
-            // 
             // p1_Select
             // 
             this.p1_Select.Location = new System.Drawing.Point(165, 385);
@@ -401,33 +370,71 @@
             this.P2_Select.UseVisualStyleBackColor = true;
             this.P2_Select.Click += new System.EventHandler(this.P2_Select_Click);
             // 
+            // playerturn
+            // 
+            this.playerturn.AutoSize = true;
+            this.playerturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.playerturn.Location = new System.Drawing.Point(103, 14);
+            this.playerturn.Name = "playerturn";
+            this.playerturn.Size = new System.Drawing.Size(0, 25);
+            this.playerturn.TabIndex = 34;
+            // 
             // p1_battlepic
             // 
-            this.p1_battlepic.Location = new System.Drawing.Point(9, 53);
+            this.p1_battlepic.Location = new System.Drawing.Point(-1, 42);
             this.p1_battlepic.Name = "p1_battlepic";
             this.p1_battlepic.Size = new System.Drawing.Size(549, 346);
-            this.p1_battlepic.TabIndex = 32;
+            this.p1_battlepic.TabIndex = 35;
             this.p1_battlepic.TabStop = false;
             this.p1_battlepic.Visible = false;
             // 
             // p2_battlepic
             // 
-            this.p2_battlepic.Location = new System.Drawing.Point(564, 53);
+            this.p2_battlepic.Location = new System.Drawing.Point(570, 42);
             this.p2_battlepic.Name = "p2_battlepic";
             this.p2_battlepic.Size = new System.Drawing.Size(549, 346);
-            this.p2_battlepic.TabIndex = 33;
+            this.p2_battlepic.TabIndex = 36;
             this.p2_battlepic.TabStop = false;
             this.p2_battlepic.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(554, -2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(10, 435);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
+            // p1_lvcard
+            // 
+            this.p1_lvcard.AutoSize = true;
+            this.p1_lvcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.p1_lvcard.Location = new System.Drawing.Point(229, 324);
+            this.p1_lvcard.Name = "p1_lvcard";
+            this.p1_lvcard.Size = new System.Drawing.Size(0, 25);
+            this.p1_lvcard.TabIndex = 38;
+            // 
+            // p2_lvcard
+            // 
+            this.p2_lvcard.AutoSize = true;
+            this.p2_lvcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.p2_lvcard.Location = new System.Drawing.Point(859, 324);
+            this.p2_lvcard.Name = "p2_lvcard";
+            this.p2_lvcard.Size = new System.Drawing.Size(0, 25);
+            this.p2_lvcard.TabIndex = 39;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 432);
+            this.Controls.Add(this.p2_lvcard);
+            this.Controls.Add(this.p1_lvcard);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.p2_battlepic);
             this.Controls.Add(this.p1_battlepic);
-            this.Controls.Add(this.p2_screen);
-            this.Controls.Add(this.p1_screen);
+            this.Controls.Add(this.playerturn);
             this.Controls.Add(this.P2_Select);
             this.Controls.Add(this.p1_Select);
             this.Controls.Add(this.showc);
@@ -456,13 +463,10 @@
             this.Controls.Add(this.p1_slot2);
             this.Controls.Add(this.p1_slot1);
             this.Controls.Add(this.p1_clanpic);
-            this.Controls.Add(this.clan_trun);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.p1_screen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2_screen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_clanpic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_skill3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_skill2)).EndInit();
@@ -481,16 +485,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_clanpic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clan_trun)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_battlepic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_battlepic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox clan_trun;
         private System.Windows.Forms.PictureBox p1_slot1;
         private System.Windows.Forms.PictureBox p1_slot2;
         private System.Windows.Forms.PictureBox p1_slot3;
@@ -518,12 +521,14 @@
         private System.Windows.Forms.PictureBox p1_clanpic;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button showc;
-        private System.Windows.Forms.PictureBox p2_screen;
-        private System.Windows.Forms.PictureBox p1_screen;
         private System.Windows.Forms.Button p1_Select;
         private System.Windows.Forms.Button P2_Select;
+        private System.Windows.Forms.Label playerturn;
         private System.Windows.Forms.PictureBox p1_battlepic;
         private System.Windows.Forms.PictureBox p2_battlepic;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label p1_lvcard;
+        private System.Windows.Forms.Label p2_lvcard;
     }
 }
 
