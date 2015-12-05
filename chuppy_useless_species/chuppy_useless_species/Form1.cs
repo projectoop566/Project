@@ -29,8 +29,7 @@ namespace chuppy_useless_species
         public Form1()
         {
             InitializeComponent();
-            m = c.notifymodeltoview();
-         
+            m = c.notifymodeltoview();        
         }  
         public void openview()
         {
@@ -43,27 +42,17 @@ namespace chuppy_useless_species
             if(checkp1_turn==true)
             {
 
-
                 p1_screen.Visible = false;
                 p2_screen.Visible = true;
-                p2_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
-                
-
-               
+                p2_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;                         
 
             }
             else if (checkp1_turn == false )
             {
-
                 p2_screen.Visible = false;
                 p1_screen.Visible = true;
-                p1_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
-                
-                
-               
+                p1_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;                                            
             }
-
-
         } 
         public void showcard()
         {           
@@ -209,9 +198,8 @@ namespace chuppy_useless_species
 
         private void p2_slot1_Click(object sender, EventArgs e)
         {
-      
-
-                fighter[1] = m._player[1].mydeck.drawcard();
+  
+           fighter[1] = m._player[1].mydeck.drawcard();
             checkp2_selectcard_battle = true;
         }
 
@@ -228,8 +216,6 @@ namespace chuppy_useless_species
         {
             if (checkp2_selectcard_battle == true)
             {
-
-
                 //runbattle
                 battlestart();
             }
