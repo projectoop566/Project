@@ -116,7 +116,8 @@ namespace chuppy_useless_species
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            fighter[0] = m._player[0].mydeck.Card[1];
+            checkp1_selectcard_battle = true;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -126,14 +127,14 @@ namespace chuppy_useless_species
 
         private void p1_slot1_Click(object sender, EventArgs e)
         {
-
-            fighter[0] = m._player[0].mydeck.drawcard();
+            fighter[0] = m._player[0].mydeck.Card[0];
             checkp1_selectcard_battle = true;
         }
 
         private void p1_slot3_Click(object sender, EventArgs e)
         {
-
+            fighter[0] = m._player[0].mydeck.Card[2];
+            checkp1_selectcard_battle = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -185,7 +186,8 @@ namespace chuppy_useless_species
 
         private void p1_slot4_Click(object sender, EventArgs e)
         {
-
+            fighter[0] = m._player[0].mydeck.Card[3];
+            checkp1_selectcard_battle = true;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {            
@@ -207,8 +209,7 @@ namespace chuppy_useless_species
 
         private void p2_slot1_Click(object sender, EventArgs e)
         {
-  
-           fighter[1] = m._player[1].mydeck.drawcard();
+           fighter[1] = m._player[1].mydeck.Card[0];
             checkp2_selectcard_battle = true;
         }
 
@@ -258,6 +259,36 @@ namespace chuppy_useless_species
         private void clan_trun_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void p1_slot5_Click(object sender, EventArgs e)
+        {
+            fighter[0] = m._player[0].mydeck.Card[4];
+            checkp1_selectcard_battle = true;
+        }
+
+        private void p2_slot2_Click(object sender, EventArgs e)
+        {
+            fighter[1] = m._player[1].mydeck.Card[1];
+            checkp2_selectcard_battle = true;
+        }
+
+        private void p2_slot3_Click(object sender, EventArgs e)
+        {
+            fighter[1] = m._player[1].mydeck.Card[2];
+            checkp2_selectcard_battle = true;
+        }
+
+        private void p2_slot4_Click(object sender, EventArgs e)
+        {
+            fighter[1] = m._player[1].mydeck.Card[3];
+            checkp2_selectcard_battle = true;
+        }
+
+        private void p2_slot5_Click(object sender, EventArgs e)
+        {
+            fighter[1] = m._player[1].mydeck.Card[4];
+            checkp2_selectcard_battle = true;
         }
     }
 }

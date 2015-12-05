@@ -221,6 +221,7 @@
             this.p2_slot5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2_slot5.TabIndex = 15;
             this.p2_slot5.TabStop = false;
+            this.p2_slot5.Click += new System.EventHandler(this.p2_slot5_Click);
             // 
             // p2_slot4
             // 
@@ -231,6 +232,7 @@
             this.p2_slot4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2_slot4.TabIndex = 14;
             this.p2_slot4.TabStop = false;
+            this.p2_slot4.Click += new System.EventHandler(this.p2_slot4_Click);
             // 
             // p2_slot3
             // 
@@ -241,6 +243,7 @@
             this.p2_slot3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2_slot3.TabIndex = 13;
             this.p2_slot3.TabStop = false;
+            this.p2_slot3.Click += new System.EventHandler(this.p2_slot3_Click);
             // 
             // p2_slot2
             // 
@@ -251,6 +254,7 @@
             this.p2_slot2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p2_slot2.TabIndex = 12;
             this.p2_slot2.TabStop = false;
+            this.p2_slot2.Click += new System.EventHandler(this.p2_slot2_Click);
             // 
             // p2_slot1
             // 
@@ -296,6 +300,7 @@
             this.p1_slot5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.p1_slot5.TabIndex = 7;
             this.p1_slot5.TabStop = false;
+            this.p1_slot5.Click += new System.EventHandler(this.p1_slot5_Click);
             // 
             // p1_slot4
             // 
@@ -381,7 +386,7 @@
             // 
             // p1_battlepic
             // 
-            this.p1_battlepic.Location = new System.Drawing.Point(-1, 42);
+            this.p1_battlepic.Location = new System.Drawing.Point(-1, 217);
             this.p1_battlepic.Name = "p1_battlepic";
             this.p1_battlepic.Size = new System.Drawing.Size(549, 346);
             this.p1_battlepic.TabIndex = 35;
@@ -390,7 +395,7 @@
             // 
             // p2_battlepic
             // 
-            this.p2_battlepic.Location = new System.Drawing.Point(570, 42);
+            this.p2_battlepic.Location = new System.Drawing.Point(570, 217);
             this.p2_battlepic.Name = "p2_battlepic";
             this.p2_battlepic.Size = new System.Drawing.Size(549, 346);
             this.p2_battlepic.TabIndex = 36;

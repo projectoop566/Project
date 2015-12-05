@@ -84,6 +84,7 @@ namespace chuppy_useless_species
         {
             m._player[0].mydeck.shuffle();
             m._player[1].mydeck.shuffle();
+            m._player[0].mydeck.shuffle();
         }
         public void select()
         {
