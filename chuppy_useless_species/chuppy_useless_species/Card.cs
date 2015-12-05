@@ -10,11 +10,17 @@ namespace chuppy_useless_species
     class Card
     {
         private int _Level;// Level = value of attack
+        private int _numcard;
         private string _PictureID_card; //for picture
         public Image backcard = Image.FromFile(@"../../images/bgcard.png");
         public Image imagecard;
         public Image imagebattlecard;
 
+        public int Numcard
+        {
+            get { return _numcard; }
+            set { }
+        }
         public string PictureID_card
         {
             get { return _PictureID_card; }
@@ -27,11 +33,12 @@ namespace chuppy_useless_species
         }
         public Card()
         {
-            _Level = 1;
+            _Level = 0;
             imagecard = Image.FromFile(@"../../images/card/human/human1.png");
         }
-        public Card(int l,Image pid,Image pid_ani)
+        public Card(int n,int l,Image pid,Image pid_ani)
         {
+            _numcard = n;
             _Level = l;
             imagecard = pid;
             imagebattlecard = pid_ani;

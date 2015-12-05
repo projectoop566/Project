@@ -23,6 +23,8 @@ namespace chuppy_useless_species
         bool checkp2_selectcard_battle = false;
 
         Card[] fighter = new Card[2];
+        public int p1_numcard;
+        public int p2_numcard;
 
         public Form1()
         {
@@ -118,6 +120,7 @@ namespace chuppy_useless_species
         {
             fighter[0] = m._player[0].mydeck.Card[1];
             checkp1_selectcard_battle = true;
+            p1_numcard = 2;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -129,12 +132,14 @@ namespace chuppy_useless_species
         {
             fighter[0] = m._player[0].mydeck.Card[0];
             checkp1_selectcard_battle = true;
+            p1_numcard = 1;
         }
 
         private void p1_slot3_Click(object sender, EventArgs e)
         {
             fighter[0] = m._player[0].mydeck.Card[2];
             checkp1_selectcard_battle = true;
+            p1_numcard = 3;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -188,6 +193,7 @@ namespace chuppy_useless_species
         {
             fighter[0] = m._player[0].mydeck.Card[3];
             checkp1_selectcard_battle = true;
+            p1_numcard = 4;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {            
@@ -211,6 +217,7 @@ namespace chuppy_useless_species
         {
            fighter[1] = m._player[1].mydeck.Card[0];
             checkp2_selectcard_battle = true;
+            p2_numcard = 1;
         }
 
         private void p1_Select_Click(object sender, EventArgs e)
@@ -230,12 +237,54 @@ namespace chuppy_useless_species
                 battlestart();
             }
         }
-
-        private void battlestart()
+        public void deletecard(int player)
         {
-            //p1_screen.Visible = true;
-            //p2_screen.Visible = true;
-
+            if(player == 1)
+            {
+                switch (p1_numcard)
+                {
+                    case 1:
+                        p1_slot1.Hide();
+                        break;
+                    case 2:
+                        p1_slot2.Hide();
+                        break;
+                    case 3:
+                        p1_slot3.Hide();
+                        break;
+                    case 4:
+                        p1_slot4.Hide();
+                        break;
+                    case 5:
+                        p1_slot5.Hide();
+                        break;
+                }
+            }
+           else
+            {
+                switch (p2_numcard)
+                {
+                    case 1:
+                        p2_slot1.Hide();
+                        break;
+                    case 2:
+                        p2_slot2.Hide();
+                        break;
+                    case 3:
+                        p2_slot3.Hide();
+                        break;
+                    case 4:
+                        p2_slot4.Hide();
+                        break;
+                    case 5:
+                        p2_slot5.Hide();
+                        break;
+                }
+            }
+            
+        }
+        private void battlestart()
+        {          
             p1_battlepic.Visible = true;
             p2_battlepic.Visible = true;
             p1_lvcard.Text = "LV Card : " + fighter[0].Level;
@@ -244,6 +293,24 @@ namespace chuppy_useless_species
             //p2_screen.Image = chuppy_useless_species.Properties.Resources.bg_select;
             p1_battlepic.Image = fighter[0].imagebattlecard;
             p2_battlepic.Image = fighter[1].imagebattlecard;
+            
+            //Battle lv of card
+            if(fighter[0].Level!=fighter[1].Level)
+            {
+                if(fighter[0].Level>fighter[1].Level)
+                {
+                    m._player[0].Winscore += 1;
+                    m._player[1].mydeck.decard(fighter[1].Numcard);
+                    deletecard(2);
+                }
+                else if (fighter[1].Level > fighter[0].Level)
+                {
+                    m._player[1].Winscore += 1;
+                    m._player[0].mydeck.decard(fighter[0].Numcard);
+                    deletecard(1);
+                }
+            }  
+
         }
 
         private void p1_battlepic_Click(object sender, EventArgs e)
@@ -265,30 +332,40 @@ namespace chuppy_useless_species
         {
             fighter[0] = m._player[0].mydeck.Card[4];
             checkp1_selectcard_battle = true;
+            p1_numcard = 5;
         }
 
         private void p2_slot2_Click(object sender, EventArgs e)
         {
             fighter[1] = m._player[1].mydeck.Card[1];
             checkp2_selectcard_battle = true;
+            p2_numcard = 2;
         }
 
         private void p2_slot3_Click(object sender, EventArgs e)
         {
             fighter[1] = m._player[1].mydeck.Card[2];
             checkp2_selectcard_battle = true;
+            p2_numcard = 3;
         }
 
         private void p2_slot4_Click(object sender, EventArgs e)
         {
             fighter[1] = m._player[1].mydeck.Card[3];
             checkp2_selectcard_battle = true;
+            p2_numcard = 4;
         }
 
         private void p2_slot5_Click(object sender, EventArgs e)
         {
             fighter[1] = m._player[1].mydeck.Card[4];
             checkp2_selectcard_battle = true;
+            p2_numcard = 5;
+        }
+
+        private void Enter_turn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

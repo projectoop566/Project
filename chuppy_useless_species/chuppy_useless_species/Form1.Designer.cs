@@ -104,6 +104,7 @@
             this.Enter_turn.TabIndex = 20;
             this.Enter_turn.Text = "Battle";
             this.Enter_turn.UseVisualStyleBackColor = true;
+            this.Enter_turn.Click += new System.EventHandler(this.Enter_turn_Click);
             // 
             // label2
             // 
@@ -386,7 +387,7 @@
             // 
             // p1_battlepic
             // 
-            this.p1_battlepic.Location = new System.Drawing.Point(-1, 217);
+            this.p1_battlepic.Location = new System.Drawing.Point(1, 182);
             this.p1_battlepic.Name = "p1_battlepic";
             this.p1_battlepic.Size = new System.Drawing.Size(549, 346);
             this.p1_battlepic.TabIndex = 35;
@@ -395,7 +396,7 @@
             // 
             // p2_battlepic
             // 
-            this.p2_battlepic.Location = new System.Drawing.Point(570, 217);
+            this.p2_battlepic.Location = new System.Drawing.Point(568, 182);
             this.p2_battlepic.Name = "p2_battlepic";
             this.p2_battlepic.Size = new System.Drawing.Size(549, 346);
             this.p2_battlepic.TabIndex = 36;
