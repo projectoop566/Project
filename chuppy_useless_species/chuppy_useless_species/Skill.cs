@@ -8,37 +8,31 @@ namespace chuppy_useless_species
 {
     class Skill
     {
-        private string _skill;
-        public string skill
-        {
-            get { return _skill; }
-            set { _skill = value; }
-        }
+        private string Name;
+        private int Num;
         private string _PictureID_skill;
+
+        public string name
+        {
+            get { return Name; }
+            set { Name = value; }
+        }
+        
         public string PictureID_skill
         {
             get { return _PictureID_skill; }
             set { _PictureID_skill = value; }
         }
 
+
         public Skill()
         {
             //defalut
-
         }
 
         public Skill(int i) // 1=  2=  3=
         {
-            if (i == 1)
-            {
-
-            }else if(i == 2)
-            {
-
-            }else if (i == 3)
-            {
-
-            }
+            Num = i;
         }
     
     }

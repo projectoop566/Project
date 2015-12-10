@@ -14,6 +14,7 @@ namespace chuppy_useless_species
         [STAThread]
         static void Main()
         {
+              
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new startview());

@@ -13,13 +13,20 @@ namespace chuppy_useless_species
         private bool checkselectP1 = false;
         private bool checkselectP2 = false;
 
+        public bool selectedskill_p1 = false;
+        public bool selectedskill_p2 = true;
+
+        public bool allplayerselectedskill = false;
+
         public bool player1select = false;
         public bool playerselect = false;
+
+
         //start view
 
         public bool checkstart()
         {
-            if (checkselectP1 & checkselectP2)
+            if (checkselectP1 && checkselectP2 && allplayerselectedskill)
             {
                 return true;
             }
@@ -46,6 +53,39 @@ namespace chuppy_useless_species
                 playerselect = true;
             }
 
+        }
+        public void selectskill(int skillnum)
+        {
+            if (selectedskill_p1 == false && selectedskill_p2 == true)
+            {
+
+                if (m._player[0].myskill[0] == 0)
+                { m._player[0].myskill[0] = skillnum; }
+                else if (m._player[0].myskill[1] == 0)
+                { m._player[0].myskill[1] = skillnum; }
+                else
+                { m._player[0].myskill[2] = skillnum; }
+
+                selectedskill_p1 = true;
+                selectedskill_p2 = false;
+            }
+            else
+            {
+                if (m._player[1].myskill[0] == 0)
+                { m._player[1].myskill[0] = skillnum; }
+                else if (m._player[1].myskill[1] == 0)
+                { m._player[1].myskill[1] = skillnum; }
+                else
+                {
+                    m._player[1].myskill[2] = skillnum;
+                    allplayerselectedskill = true;
+                   
+                }
+
+
+                selectedskill_p1 = false;
+                selectedskill_p2 = true;
+            }
         }
         public void startbutton()
         {

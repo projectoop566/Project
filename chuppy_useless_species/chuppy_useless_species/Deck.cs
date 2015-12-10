@@ -115,7 +115,8 @@ namespace chuppy_useless_species
         }
         public void decard(int n)
         {
-            _card[n - 1].Level = 0;
+            _card[n - 1].Level = 999;
+            _card[n - 1].imagecard = Image.FromFile(@"../../images/bgcard.png");
         }
 
     }

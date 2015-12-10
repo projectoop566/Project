@@ -28,9 +28,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.Enter_turn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.battle_button = new System.Windows.Forms.Button();
+            this.winscore1 = new System.Windows.Forms.Label();
+            this.winscore2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.player1clan = new System.Windows.Forms.Label();
             this.player2clan = new System.Windows.Forms.Label();
@@ -58,11 +58,14 @@
             this.p1_Select = new System.Windows.Forms.Button();
             this.P2_Select = new System.Windows.Forms.Button();
             this.playerturn = new System.Windows.Forms.Label();
-            this.p1_battlepic = new System.Windows.Forms.PictureBox();
             this.p2_battlepic = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.p1_lvcard = new System.Windows.Forms.Label();
             this.p2_lvcard = new System.Windows.Forms.Label();
+            this.next_button = new System.Windows.Forms.Button();
+            this.p1_battlepic = new System.Windows.Forms.PictureBox();
+            this.p1text_skill = new System.Windows.Forms.Label();
+            this.p2text_skill = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.p2_clanpic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_skill3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_skill2)).BeginInit();
@@ -81,9 +84,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_clanpic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1_battlepic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_battlepic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1_battlepic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,35 +99,36 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "TURN :";
             // 
-            // Enter_turn
+            // battle_button
             // 
-            this.Enter_turn.Location = new System.Drawing.Point(759, 12);
-            this.Enter_turn.Name = "Enter_turn";
-            this.Enter_turn.Size = new System.Drawing.Size(82, 35);
-            this.Enter_turn.TabIndex = 20;
-            this.Enter_turn.Text = "Battle";
-            this.Enter_turn.UseVisualStyleBackColor = true;
-            this.Enter_turn.Click += new System.EventHandler(this.Enter_turn_Click);
+            this.battle_button.Location = new System.Drawing.Point(670, 12);
+            this.battle_button.Name = "battle_button";
+            this.battle_button.Size = new System.Drawing.Size(82, 34);
+            this.battle_button.TabIndex = 20;
+            this.battle_button.Text = "BATTLE";
+            this.battle_button.UseVisualStyleBackColor = true;
+            this.battle_button.Click += new System.EventHandler(this.Enter_turn_Click);
             // 
-            // label2
+            // winscore1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label2.Location = new System.Drawing.Point(303, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(247, 25);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "Win 00 Lose 00 Draw 00";
+            this.winscore1.AutoSize = true;
+            this.winscore1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.winscore1.Location = new System.Drawing.Point(451, 69);
+            this.winscore1.Name = "winscore1";
+            this.winscore1.Size = new System.Drawing.Size(85, 25);
+            this.winscore1.TabIndex = 21;
+            this.winscore1.Text = "Win 00 ";
+            this.winscore1.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label3
+            // winscore2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label3.Location = new System.Drawing.Point(859, 69);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(247, 25);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Win 00 Lose 00 Draw 00";
+            this.winscore2.AutoSize = true;
+            this.winscore2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.winscore2.Location = new System.Drawing.Point(1027, 69);
+            this.winscore2.Name = "winscore2";
+            this.winscore2.Size = new System.Drawing.Size(79, 25);
+            this.winscore2.TabIndex = 22;
+            this.winscore2.Text = "Win 00";
             // 
             // button1
             // 
@@ -139,7 +143,7 @@
             // player1clan
             // 
             this.player1clan.AutoSize = true;
-            this.player1clan.Location = new System.Drawing.Point(57, 69);
+            this.player1clan.Location = new System.Drawing.Point(47, 78);
             this.player1clan.Name = "player1clan";
             this.player1clan.Size = new System.Drawing.Size(45, 13);
             this.player1clan.TabIndex = 24;
@@ -149,7 +153,7 @@
             // player2clan
             // 
             this.player2clan.AutoSize = true;
-            this.player2clan.Location = new System.Drawing.Point(613, 69);
+            this.player2clan.Location = new System.Drawing.Point(603, 78);
             this.player2clan.Name = "player2clan";
             this.player2clan.Size = new System.Drawing.Size(45, 13);
             this.player2clan.TabIndex = 25;
@@ -196,6 +200,7 @@
             this.p2_skill3.Size = new System.Drawing.Size(42, 41);
             this.p2_skill3.TabIndex = 18;
             this.p2_skill3.TabStop = false;
+            this.p2_skill3.Click += new System.EventHandler(this.p2_skill3_Click);
             // 
             // p2_skill2
             // 
@@ -204,6 +209,7 @@
             this.p2_skill2.Size = new System.Drawing.Size(42, 41);
             this.p2_skill2.TabIndex = 17;
             this.p2_skill2.TabStop = false;
+            this.p2_skill2.Click += new System.EventHandler(this.p2_skill2_Click);
             // 
             // p2_skill1
             // 
@@ -212,6 +218,7 @@
             this.p2_skill1.Size = new System.Drawing.Size(42, 41);
             this.p2_skill1.TabIndex = 16;
             this.p2_skill1.TabStop = false;
+            this.p2_skill1.Click += new System.EventHandler(this.p2_skill1_Click);
             // 
             // p2_slot5
             // 
@@ -275,6 +282,7 @@
             this.p1_skill3.Size = new System.Drawing.Size(42, 41);
             this.p1_skill3.TabIndex = 10;
             this.p1_skill3.TabStop = false;
+            this.p1_skill3.Click += new System.EventHandler(this.p1_skill3_Click);
             // 
             // p1_skill2
             // 
@@ -283,6 +291,7 @@
             this.p1_skill2.Size = new System.Drawing.Size(42, 41);
             this.p1_skill2.TabIndex = 9;
             this.p1_skill2.TabStop = false;
+            this.p1_skill2.Click += new System.EventHandler(this.p1_skill2_Click);
             // 
             // p1_skill1
             // 
@@ -291,6 +300,7 @@
             this.p1_skill1.Size = new System.Drawing.Size(42, 41);
             this.p1_skill1.TabIndex = 8;
             this.p1_skill1.TabStop = false;
+            this.p1_skill1.Click += new System.EventHandler(this.p1_skill1_Click);
             // 
             // p1_slot5
             // 
@@ -385,20 +395,11 @@
             this.playerturn.Size = new System.Drawing.Size(0, 25);
             this.playerturn.TabIndex = 34;
             // 
-            // p1_battlepic
-            // 
-            this.p1_battlepic.Location = new System.Drawing.Point(1, 182);
-            this.p1_battlepic.Name = "p1_battlepic";
-            this.p1_battlepic.Size = new System.Drawing.Size(549, 346);
-            this.p1_battlepic.TabIndex = 35;
-            this.p1_battlepic.TabStop = false;
-            this.p1_battlepic.Visible = false;
-            // 
             // p2_battlepic
             // 
-            this.p2_battlepic.Location = new System.Drawing.Point(568, 182);
+            this.p2_battlepic.Location = new System.Drawing.Point(664, 67);
             this.p2_battlepic.Name = "p2_battlepic";
-            this.p2_battlepic.Size = new System.Drawing.Size(549, 346);
+            this.p2_battlepic.Size = new System.Drawing.Size(353, 153);
             this.p2_battlepic.TabIndex = 36;
             this.p2_battlepic.TabStop = false;
             this.p2_battlepic.Visible = false;
@@ -416,30 +417,74 @@
             // 
             this.p1_lvcard.AutoSize = true;
             this.p1_lvcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.p1_lvcard.Location = new System.Drawing.Point(229, 324);
+            this.p1_lvcard.Location = new System.Drawing.Point(12, 353);
             this.p1_lvcard.Name = "p1_lvcard";
-            this.p1_lvcard.Size = new System.Drawing.Size(0, 25);
+            this.p1_lvcard.Size = new System.Drawing.Size(30, 25);
             this.p1_lvcard.TabIndex = 38;
+            this.p1_lvcard.Text = "...";
             // 
             // p2_lvcard
             // 
             this.p2_lvcard.AutoSize = true;
             this.p2_lvcard.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.p2_lvcard.Location = new System.Drawing.Point(859, 324);
+            this.p2_lvcard.Location = new System.Drawing.Point(580, 353);
             this.p2_lvcard.Name = "p2_lvcard";
-            this.p2_lvcard.Size = new System.Drawing.Size(0, 25);
+            this.p2_lvcard.Size = new System.Drawing.Size(30, 25);
             this.p2_lvcard.TabIndex = 39;
+            this.p2_lvcard.Text = "...";
+            // 
+            // next_button
+            // 
+            this.next_button.Location = new System.Drawing.Point(570, 12);
+            this.next_button.Name = "next_button";
+            this.next_button.Size = new System.Drawing.Size(94, 34);
+            this.next_button.TabIndex = 40;
+            this.next_button.Text = "NEXT";
+            this.next_button.UseVisualStyleBackColor = true;
+            this.next_button.Click += new System.EventHandler(this.next_button_Click);
+            // 
+            // p1_battlepic
+            // 
+            this.p1_battlepic.Location = new System.Drawing.Point(74, 26);
+            this.p1_battlepic.Name = "p1_battlepic";
+            this.p1_battlepic.Size = new System.Drawing.Size(383, 194);
+            this.p1_battlepic.TabIndex = 44;
+            this.p1_battlepic.TabStop = false;
+            this.p1_battlepic.Visible = false;
+            // 
+            // p1text_skill
+            // 
+            this.p1text_skill.AutoSize = true;
+            this.p1text_skill.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.p1text_skill.Location = new System.Drawing.Point(11, 378);
+            this.p1text_skill.Name = "p1text_skill";
+            this.p1text_skill.Size = new System.Drawing.Size(30, 25);
+            this.p1text_skill.TabIndex = 48;
+            this.p1text_skill.Text = "...";
+            // 
+            // p2text_skill
+            // 
+            this.p2text_skill.AutoSize = true;
+            this.p2text_skill.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.p2text_skill.Location = new System.Drawing.Point(580, 378);
+            this.p2text_skill.Name = "p2text_skill";
+            this.p2text_skill.Size = new System.Drawing.Size(30, 25);
+            this.p2text_skill.TabIndex = 49;
+            this.p2text_skill.Text = "...";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 432);
+            this.Controls.Add(this.p2text_skill);
+            this.Controls.Add(this.p1text_skill);
+            this.Controls.Add(this.p1_battlepic);
+            this.Controls.Add(this.next_button);
             this.Controls.Add(this.p2_lvcard);
             this.Controls.Add(this.p1_lvcard);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.p2_battlepic);
-            this.Controls.Add(this.p1_battlepic);
             this.Controls.Add(this.playerturn);
             this.Controls.Add(this.P2_Select);
             this.Controls.Add(this.p1_Select);
@@ -448,9 +493,9 @@
             this.Controls.Add(this.player2clan);
             this.Controls.Add(this.player1clan);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Enter_turn);
+            this.Controls.Add(this.winscore2);
+            this.Controls.Add(this.winscore1);
+            this.Controls.Add(this.battle_button);
             this.Controls.Add(this.p2_clanpic);
             this.Controls.Add(this.p2_skill3);
             this.Controls.Add(this.p2_skill2);
@@ -491,9 +536,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_slot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p1_clanpic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p1_battlepic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2_battlepic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1_battlepic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,9 +562,9 @@
         private System.Windows.Forms.PictureBox p2_slot2;
         private System.Windows.Forms.PictureBox p2_slot1;
         private System.Windows.Forms.PictureBox p2_clanpic;
-        private System.Windows.Forms.Button Enter_turn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button battle_button;
+        private System.Windows.Forms.Label winscore1;
+        private System.Windows.Forms.Label winscore2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label player1clan;
         private System.Windows.Forms.Label player2clan;
@@ -530,11 +575,14 @@
         private System.Windows.Forms.Button p1_Select;
         private System.Windows.Forms.Button P2_Select;
         private System.Windows.Forms.Label playerturn;
-        private System.Windows.Forms.PictureBox p1_battlepic;
         private System.Windows.Forms.PictureBox p2_battlepic;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label p1_lvcard;
         private System.Windows.Forms.Label p2_lvcard;
+        private System.Windows.Forms.Button next_button;
+        private System.Windows.Forms.PictureBox p1_battlepic;
+        private System.Windows.Forms.Label p1text_skill;
+        private System.Windows.Forms.Label p2text_skill;
     }
 }
 

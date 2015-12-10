@@ -46,11 +46,31 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill1 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill2 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill3 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill4 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill5 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill6 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill7 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill8 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill9 = new System.Windows.Forms.PictureBox();
+            this.picbox_skill10 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill10)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -223,11 +243,121 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // picbox_skill1
+            // 
+            this.picbox_skill1.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill1.Location = new System.Drawing.Point(1013, 12);
+            this.picbox_skill1.Name = "picbox_skill1";
+            this.picbox_skill1.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill1.TabIndex = 20;
+            this.picbox_skill1.TabStop = false;
+            this.picbox_skill1.Click += new System.EventHandler(this.picbox_skill1_Click);
+            // 
+            // picbox_skill2
+            // 
+            this.picbox_skill2.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill2.Location = new System.Drawing.Point(1057, 12);
+            this.picbox_skill2.Name = "picbox_skill2";
+            this.picbox_skill2.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill2.TabIndex = 21;
+            this.picbox_skill2.TabStop = false;
+            this.picbox_skill2.Click += new System.EventHandler(this.picbox_skill2_Click);
+            // 
+            // picbox_skill3
+            // 
+            this.picbox_skill3.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill3.Location = new System.Drawing.Point(1013, 53);
+            this.picbox_skill3.Name = "picbox_skill3";
+            this.picbox_skill3.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill3.TabIndex = 22;
+            this.picbox_skill3.TabStop = false;
+            this.picbox_skill3.Click += new System.EventHandler(this.picbox_skill3_Click);
+            // 
+            // picbox_skill4
+            // 
+            this.picbox_skill4.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill4.Location = new System.Drawing.Point(1057, 53);
+            this.picbox_skill4.Name = "picbox_skill4";
+            this.picbox_skill4.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill4.TabIndex = 23;
+            this.picbox_skill4.TabStop = false;
+            this.picbox_skill4.Click += new System.EventHandler(this.picbox_skill4_Click);
+            // 
+            // picbox_skill5
+            // 
+            this.picbox_skill5.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill5.Location = new System.Drawing.Point(1013, 94);
+            this.picbox_skill5.Name = "picbox_skill5";
+            this.picbox_skill5.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill5.TabIndex = 24;
+            this.picbox_skill5.TabStop = false;
+            this.picbox_skill5.Click += new System.EventHandler(this.picbox_skill5_Click);
+            // 
+            // picbox_skill6
+            // 
+            this.picbox_skill6.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill6.Location = new System.Drawing.Point(1057, 94);
+            this.picbox_skill6.Name = "picbox_skill6";
+            this.picbox_skill6.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill6.TabIndex = 25;
+            this.picbox_skill6.TabStop = false;
+            this.picbox_skill6.Click += new System.EventHandler(this.picbox_skill6_Click);
+            // 
+            // picbox_skill7
+            // 
+            this.picbox_skill7.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill7.Location = new System.Drawing.Point(1013, 135);
+            this.picbox_skill7.Name = "picbox_skill7";
+            this.picbox_skill7.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill7.TabIndex = 26;
+            this.picbox_skill7.TabStop = false;
+            this.picbox_skill7.Click += new System.EventHandler(this.picbox_skill7_Click);
+            // 
+            // picbox_skill8
+            // 
+            this.picbox_skill8.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill8.Location = new System.Drawing.Point(1057, 135);
+            this.picbox_skill8.Name = "picbox_skill8";
+            this.picbox_skill8.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill8.TabIndex = 27;
+            this.picbox_skill8.TabStop = false;
+            this.picbox_skill8.Click += new System.EventHandler(this.picbox_skill8_Click);
+            // 
+            // picbox_skill9
+            // 
+            this.picbox_skill9.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill9.Location = new System.Drawing.Point(1013, 176);
+            this.picbox_skill9.Name = "picbox_skill9";
+            this.picbox_skill9.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill9.TabIndex = 28;
+            this.picbox_skill9.TabStop = false;
+            this.picbox_skill9.Click += new System.EventHandler(this.picbox_skill9_Click);
+            // 
+            // picbox_skill10
+            // 
+            this.picbox_skill10.Image = global::chuppy_useless_species.Properties.Resources.bg_select;
+            this.picbox_skill10.Location = new System.Drawing.Point(1057, 176);
+            this.picbox_skill10.Name = "picbox_skill10";
+            this.picbox_skill10.Size = new System.Drawing.Size(38, 35);
+            this.picbox_skill10.TabIndex = 29;
+            this.picbox_skill10.TabStop = false;
+            this.picbox_skill10.Click += new System.EventHandler(this.picbox_skill10_Click);
+            // 
             // startview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 432);
+            this.Controls.Add(this.picbox_skill10);
+            this.Controls.Add(this.picbox_skill9);
+            this.Controls.Add(this.picbox_skill8);
+            this.Controls.Add(this.picbox_skill7);
+            this.Controls.Add(this.picbox_skill6);
+            this.Controls.Add(this.picbox_skill5);
+            this.Controls.Add(this.picbox_skill4);
+            this.Controls.Add(this.picbox_skill3);
+            this.Controls.Add(this.picbox_skill2);
+            this.Controls.Add(this.picbox_skill1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reset);
             this.Controls.Add(this.confirmselect);
@@ -253,6 +383,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbox_skill10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,5 +417,15 @@
         private System.Windows.Forms.Button confirmselect;
         private System.Windows.Forms.Button reset;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox picbox_skill1;
+        private System.Windows.Forms.PictureBox picbox_skill2;
+        private System.Windows.Forms.PictureBox picbox_skill3;
+        private System.Windows.Forms.PictureBox picbox_skill4;
+        private System.Windows.Forms.PictureBox picbox_skill5;
+        private System.Windows.Forms.PictureBox picbox_skill6;
+        private System.Windows.Forms.PictureBox picbox_skill7;
+        private System.Windows.Forms.PictureBox picbox_skill8;
+        private System.Windows.Forms.PictureBox picbox_skill9;
+        private System.Windows.Forms.PictureBox picbox_skill10;
     }
 }

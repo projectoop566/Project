@@ -10,28 +10,35 @@ namespace chuppy_useless_species
     {
         
         private string _Name;
-        private string _Winscore;
-        private string _Lossscore;
+        private int _Winscore;
+        private int _Lossscore;
+        public  int[] myskill  = new int[3];
+        
         public Deck mydeck = new Deck();
-              
+       
+       
+               
         public string Name
         {
             get { return _Name; }
             set { _Name = value; }
         }
-        public string Winscore
+        public int Winscore
         {
             get { return _Winscore; }
             set { }
         }
-        public string Lossscore
+        public int Lossscore
         {
             get { return _Lossscore; }
             set { }
         } 
         public Player()
         {
-            _Winscore = _Lossscore = "0";
+            _Winscore = _Lossscore = 0;
+            myskill[0] = 0;
+            myskill[1] = 0;
+            myskill[2] = 0;
         }
         public void setname(string name) //setplayer name
         {
@@ -42,7 +49,10 @@ namespace chuppy_useless_species
             mydeck = new Deck(c);
             
         }
-
+        public void win()
+        {
+            _Winscore = _Winscore + 1;
+        }
         
     }
 }
