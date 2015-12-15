@@ -101,11 +101,11 @@
             // 
             // battle_button
             // 
-            this.battle_button.Location = new System.Drawing.Point(670, 12);
+            this.battle_button.Image = ((System.Drawing.Image)(resources.GetObject("battle_button.Image")));
+            this.battle_button.Location = new System.Drawing.Point(683, 9);
             this.battle_button.Name = "battle_button";
-            this.battle_button.Size = new System.Drawing.Size(82, 34);
+            this.battle_button.Size = new System.Drawing.Size(103, 51);
             this.battle_button.TabIndex = 20;
-            this.battle_button.Text = "BATTLE";
             this.battle_button.UseVisualStyleBackColor = true;
             this.battle_button.Click += new System.EventHandler(this.Enter_turn_Click);
             // 
@@ -132,11 +132,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1023, 12);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1012, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 35);
+            this.button1.Size = new System.Drawing.Size(107, 64);
             this.button1.TabIndex = 23;
-            this.button1.Text = "EXIT";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -162,11 +162,11 @@
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(935, 12);
+            this.start.Image = ((System.Drawing.Image)(resources.GetObject("start.Image")));
+            this.start.Location = new System.Drawing.Point(946, 17);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(82, 35);
+            this.start.Size = new System.Drawing.Size(60, 35);
             this.start.TabIndex = 26;
-            this.start.Text = "START";
             this.start.UseVisualStyleBackColor = true;
             this.start.Click += new System.EventHandler(this.start_Click);
             // 
@@ -177,11 +177,11 @@
             // 
             // showc
             // 
-            this.showc.Location = new System.Drawing.Point(847, 12);
+            this.showc.Image = ((System.Drawing.Image)(resources.GetObject("showc.Image")));
+            this.showc.Location = new System.Drawing.Point(818, 12);
             this.showc.Name = "showc";
-            this.showc.Size = new System.Drawing.Size(82, 35);
+            this.showc.Size = new System.Drawing.Size(111, 49);
             this.showc.TabIndex = 27;
-            this.showc.Text = "SHOWCARD";
             this.showc.UseVisualStyleBackColor = true;
             this.showc.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -368,21 +368,21 @@
             // 
             // p1_Select
             // 
-            this.p1_Select.Location = new System.Drawing.Point(165, 385);
+            this.p1_Select.Image = ((System.Drawing.Image)(resources.GetObject("p1_Select.Image")));
+            this.p1_Select.Location = new System.Drawing.Point(428, 353);
             this.p1_Select.Name = "p1_Select";
-            this.p1_Select.Size = new System.Drawing.Size(206, 35);
+            this.p1_Select.Size = new System.Drawing.Size(108, 67);
             this.p1_Select.TabIndex = 30;
-            this.p1_Select.Text = "Select";
             this.p1_Select.UseVisualStyleBackColor = true;
             this.p1_Select.Click += new System.EventHandler(this.p1_Select_Click);
             // 
             // P2_Select
             // 
-            this.P2_Select.Location = new System.Drawing.Point(789, 385);
+            this.P2_Select.Image = ((System.Drawing.Image)(resources.GetObject("P2_Select.Image")));
+            this.P2_Select.Location = new System.Drawing.Point(999, 353);
             this.P2_Select.Name = "P2_Select";
-            this.P2_Select.Size = new System.Drawing.Size(206, 35);
+            this.P2_Select.Size = new System.Drawing.Size(106, 67);
             this.P2_Select.TabIndex = 31;
-            this.P2_Select.Text = "Select";
             this.P2_Select.UseVisualStyleBackColor = true;
             this.P2_Select.Click += new System.EventHandler(this.P2_Select_Click);
             // 
@@ -435,11 +435,12 @@
             // 
             // next_button
             // 
-            this.next_button.Location = new System.Drawing.Point(570, 12);
+            this.next_button.Image = ((System.Drawing.Image)(resources.GetObject("next_button.Image")));
+            this.next_button.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.next_button.Location = new System.Drawing.Point(568, 6);
             this.next_button.Name = "next_button";
-            this.next_button.Size = new System.Drawing.Size(94, 34);
+            this.next_button.Size = new System.Drawing.Size(109, 57);
             this.next_button.TabIndex = 40;
-            this.next_button.Text = "NEXT";
             this.next_button.UseVisualStyleBackColor = true;
             this.next_button.Click += new System.EventHandler(this.next_button_Click);
             // 
@@ -476,6 +477,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(1117, 432);
             this.Controls.Add(this.p2text_skill);
             this.Controls.Add(this.p1text_skill);

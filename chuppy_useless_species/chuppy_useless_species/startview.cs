@@ -17,19 +17,33 @@ namespace chuppy_useless_species
         Form1 gameview = new Form1(); 
         public startview()
         {
-            InitializeComponent();
-            reset.Hide();
-            button1.Hide();        
+            InitializeComponent();                
         }
         public void Notify()
         {
             if(c.playerselect==true)
             {
-                updateclanp();
+                updateclanp();          
             }                 
         }
-        
-
+        public void showturn()
+        {
+           if(c.allplayerselectedskill == false)
+            {
+                if (c.selectedskill_p1 == true)
+                {
+                    text_turn.Text = " Player 2 select skill";
+                }
+                else
+                {
+                    text_turn.Text = " Player 1 select skill ";
+                }
+            }
+            else
+            {
+                text_turn.Text = "Let's PLAY";
+            }                     
+        }
         public void updateclanp()
         {
             if (c.player1select == true)
@@ -178,7 +192,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill1.Hide();
-
+            showturn();
         }
 
         private void picbox_skill2_Click(object sender, EventArgs e)
@@ -188,6 +202,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill2.Hide();
+            showturn();
         }
 
         private void picbox_skill3_Click(object sender, EventArgs e)
@@ -197,6 +212,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill3.Hide();
+            showturn();
         }
 
         private void picbox_skill4_Click(object sender, EventArgs e)
@@ -206,6 +222,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill4.Hide();
+            showturn();
         }
 
         private void picbox_skill5_Click(object sender, EventArgs e)
@@ -215,6 +232,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill5.Hide();
+            showturn();
         }
 
         private void picbox_skill6_Click(object sender, EventArgs e)
@@ -224,6 +242,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill6.Hide();
+            showturn();
         }
 
         private void picbox_skill7_Click(object sender, EventArgs e)
@@ -233,6 +252,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill7.Hide();
+            showturn();
         }
 
         private void picbox_skill8_Click(object sender, EventArgs e)
@@ -242,6 +262,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill8.Hide();
+            showturn();
         }
 
         private void picbox_skill9_Click(object sender, EventArgs e)
@@ -251,6 +272,7 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill9.Hide();
+            showturn();
         }
 
         private void picbox_skill10_Click(object sender, EventArgs e)
@@ -260,6 +282,12 @@ namespace chuppy_useless_species
             c.selectskill(skillnum);
             checkselectedallplayer();
             picbox_skill10.Hide();
+            showturn();
+        }
+
+        private void text_turn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

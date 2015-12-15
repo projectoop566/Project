@@ -376,24 +376,107 @@ namespace chuppy_useless_species
             p2_lvcard.Text = "LV Card : " + fighter[1].Level;
             p1_battlepic.Image = fighter[0].imagebattlecard;
             p2_battlepic.Image = fighter[1].imagebattlecard;
+            p1text_skill.Text = textofskill(skill_P1);
+            p2text_skill.Text = textofskill(skill_P2);
+
+
+        }
+        
+        public string textofskill(int numskill) //return label of skill; 
+        {
+            string y ="Do not use skill";
+            switch (numskill)
+            {
+                case 1://lv คูณ 2
+                    y = "Time 2 of LV";
+                    break;
+                case 2: //สกิลดูดพลัง
+                    y = "555";
+                    break;
+                case 3: // 
+                    y = "555";
+                    break;
+                case 4:
+                    y = "555";
+                    break;
+                case 5:
+                    y = "555";
+                    break;
+                case 6:
+                    y = "555";
+                    break;
+                case 7:
+                    y = "555";
+                    break;
+                case 8:
+                    y = "555";
+                    break;
+                case 9:
+                    y = "555";
+                    break;
+                case 10:
+                    y = "555";
+                    break;
+                default:
+                    break;
+
+            }
+            return y;
         }
         public void usedskill(int n,int player)
         {
             
-                switch(n)
+                switch(n)  
                 {
-                    case 1:
+                  case 1://lv คูณ 2
                         fighter[player].Level = fighter[player].Level * 2;
                     break;
-
-                    case 2:
+                  case 2: //สกิลดูดพลัง
+                        if(player == 0)
+                        {
+                        fighter[1].Level = fighter[1].Level - 1;
+                        fighter[player].Level = fighter[player].Level + 1;
+                        }
+                        else
+                        {
+                        fighter[0].Level = fighter[0].Level - 1;
+                        fighter[player].Level = fighter[player].Level + 1;
+                    }                                      
+                    break;
+                  case 3: // แลก LV 
+                    int temp=fighter[player].Level;
+                    if(player ==0)
+                    {
+                        fighter[player].Level = fighter[1].Level;
+                        fighter[1].Level = temp;                      
+                    }
+                    else
+                    {
+                        fighter[player].Level = fighter[0].Level;
+                        fighter[0].Level = temp;
+                    }
+                    break;
+                  case 4://
                     fighter[player].Level = fighter[player].Level * 2;
                     break;
-
-                    case 3:
+                  case 5:
                     fighter[player].Level = fighter[player].Level * 2;
                     break;
-
+                  case 6:
+                    fighter[player].Level = fighter[player].Level * 2;
+                    break;
+                  case 7:
+                    fighter[player].Level = fighter[player].Level * 2;
+                    break;
+                  case 8:
+                    fighter[player].Level = fighter[player].Level * 2;
+                    break;
+                  case 9:
+                    fighter[player].Level = fighter[player].Level * 2;
+                    break;
+                  case 10:
+                    fighter[player].Level = fighter[player].Level * 2;
+                    break;
             }
                                  
         }
@@ -484,6 +567,14 @@ namespace chuppy_useless_species
         {
 
         }
+        public void textbattle()
+        {
+            p1_lvcard.Text = "...";
+            p2_lvcard.Text = "...";
+            p2text_skill.Text = "...";
+            p1text_skill.Text = "...";
+         
+        }
 
         private void next_button_Click(object sender, EventArgs e)
         {
@@ -495,8 +586,8 @@ namespace chuppy_useless_species
             next_button.Hide();
             updatecard();
             shufflecard();
-            p1_lvcard.Text = "...";
-            p2_lvcard.Text = "...";
+
+            textbattle();
 
             skill_P1 = skill_P2 = 0;
 

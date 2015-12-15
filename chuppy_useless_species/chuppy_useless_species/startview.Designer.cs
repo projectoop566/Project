@@ -39,8 +39,6 @@
             this.nameclanP1 = new System.Windows.Forms.Label();
             this.nameclanP2 = new System.Windows.Forms.Label();
             this.confirmselect = new System.Windows.Forms.Button();
-            this.reset = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -56,6 +54,8 @@
             this.picbox_skill8 = new System.Windows.Forms.PictureBox();
             this.picbox_skill9 = new System.Windows.Forms.PictureBox();
             this.picbox_skill10 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.text_turn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -123,27 +123,30 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(545, 336);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label6.Location = new System.Drawing.Point(539, 373);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.Size = new System.Drawing.Size(92, 24);
             this.label6.TabIndex = 13;
             this.label6.Text = "Player 1 : ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(676, 336);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label7.Location = new System.Drawing.Point(743, 373);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.Size = new System.Drawing.Size(92, 24);
             this.label7.TabIndex = 14;
             this.label7.Text = "Player 2 : ";
             // 
             // nameclanP1
             // 
             this.nameclanP1.AutoSize = true;
-            this.nameclanP1.Location = new System.Drawing.Point(605, 336);
+            this.nameclanP1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.nameclanP1.Location = new System.Drawing.Point(637, 373);
             this.nameclanP1.Name = "nameclanP1";
-            this.nameclanP1.Size = new System.Drawing.Size(47, 13);
+            this.nameclanP1.Size = new System.Drawing.Size(81, 24);
             this.nameclanP1.TabIndex = 15;
             this.nameclanP1.Text = "unselect";
             this.nameclanP1.Click += new System.EventHandler(this.label8_Click);
@@ -151,9 +154,10 @@
             // nameclanP2
             // 
             this.nameclanP2.AutoSize = true;
-            this.nameclanP2.Location = new System.Drawing.Point(736, 336);
+            this.nameclanP2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.nameclanP2.Location = new System.Drawing.Point(841, 373);
             this.nameclanP2.Name = "nameclanP2";
-            this.nameclanP2.Size = new System.Drawing.Size(47, 13);
+            this.nameclanP2.Size = new System.Drawing.Size(81, 24);
             this.nameclanP2.TabIndex = 16;
             this.nameclanP2.Text = "unselect";
             // 
@@ -161,33 +165,14 @@
             // 
             this.confirmselect.Font = new System.Drawing.Font("AngsanaUPC", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmselect.ForeColor = System.Drawing.Color.Red;
-            this.confirmselect.Location = new System.Drawing.Point(852, 327);
+            this.confirmselect.Image = ((System.Drawing.Image)(resources.GetObject("confirmselect.Image")));
+            this.confirmselect.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.confirmselect.Location = new System.Drawing.Point(1020, 348);
             this.confirmselect.Name = "confirmselect";
-            this.confirmselect.Size = new System.Drawing.Size(155, 56);
+            this.confirmselect.Size = new System.Drawing.Size(85, 72);
             this.confirmselect.TabIndex = 17;
-            this.confirmselect.Text = "Let\'s Play";
             this.confirmselect.UseVisualStyleBackColor = true;
             this.confirmselect.Click += new System.EventHandler(this.confirmselect_Click);
-            // 
-            // reset
-            // 
-            this.reset.Location = new System.Drawing.Point(548, 364);
-            this.reset.Name = "reset";
-            this.reset.Size = new System.Drawing.Size(104, 44);
-            this.reset.TabIndex = 18;
-            this.reset.Text = "Reset";
-            this.reset.UseVisualStyleBackColor = true;
-            this.reset.Click += new System.EventHandler(this.reset_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(679, 364);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 44);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox2
             // 
@@ -343,11 +328,37 @@
             this.picbox_skill10.TabStop = false;
             this.picbox_skill10.Click += new System.EventHandler(this.picbox_skill10_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.label8.ForeColor = System.Drawing.Color.Blue;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label8.Location = new System.Drawing.Point(538, 305);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(148, 25);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Select skill : ";
+            // 
+            // text_turn
+            // 
+            this.text_turn.AutoSize = true;
+            this.text_turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.text_turn.Location = new System.Drawing.Point(692, 305);
+            this.text_turn.Name = "text_turn";
+            this.text_turn.Size = new System.Drawing.Size(197, 25);
+            this.text_turn.TabIndex = 31;
+            this.text_turn.Text = "Player 1 select skill";
+            this.text_turn.Click += new System.EventHandler(this.text_turn_Click);
+            // 
             // startview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1117, 432);
+            this.Controls.Add(this.text_turn);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.picbox_skill10);
             this.Controls.Add(this.picbox_skill9);
             this.Controls.Add(this.picbox_skill8);
@@ -358,8 +369,6 @@
             this.Controls.Add(this.picbox_skill3);
             this.Controls.Add(this.picbox_skill2);
             this.Controls.Add(this.picbox_skill1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.reset);
             this.Controls.Add(this.confirmselect);
             this.Controls.Add(this.nameclanP2);
             this.Controls.Add(this.nameclanP1);
@@ -415,8 +424,6 @@
         private System.Windows.Forms.Label nameclanP1;
         private System.Windows.Forms.Label nameclanP2;
         private System.Windows.Forms.Button confirmselect;
-        private System.Windows.Forms.Button reset;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picbox_skill1;
         private System.Windows.Forms.PictureBox picbox_skill2;
         private System.Windows.Forms.PictureBox picbox_skill3;
@@ -427,5 +434,7 @@
         private System.Windows.Forms.PictureBox picbox_skill8;
         private System.Windows.Forms.PictureBox picbox_skill9;
         private System.Windows.Forms.PictureBox picbox_skill10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label text_turn;
     }
 }
