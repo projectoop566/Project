@@ -597,9 +597,9 @@ namespace chuppy_useless_species
                         updatenewlv();
                         battlelv();
                     }
-                    else if ((skill_P1 == 6 && skill_P1 == 8)|| (skill_P2 == 6 && skill_P2 == 8))
+                    else if ((skill_P1 >= 6 && skill_P1 <= 8)|| (skill_P2 >= 6 && skill_P2 <= 8))
                     {
-                        if ((skill_P1 ==6 && skill_P1<=8) && (skill_P2!=6 || skill_P2!=8))
+                        if ((skill_P1 >=6 && skill_P1<=8) && (skill_P2<6 || skill_P2>8))
                         {
                             usedskill(skill_P1, 0);
                         }
@@ -609,25 +609,14 @@ namespace chuppy_useless_species
                         }
                         updatenewlv();
                     }
-                    else if(skill_P1 != 7 || skill_P2 != 7)
+                    else
                     {
                         usedskill(skill_P1, 0);
                         usedskill(skill_P2, 1);
                         updatenewlv();
                         battlelv();
                     }
-                    else
-                    {
-                        if(skill_P1==7)
-                        {
-                            usedskill(skill_P1, 0);
-                          
-                        }
-                        else
-                        {
-                            usedskill(skill_P2, 1);
-                        }
-                    }
+                    
                 }
                 else if (skill_P1 != 0 && skill_P2 == 0)
                 {
@@ -640,23 +629,19 @@ namespace chuppy_useless_species
                         updatenewlv();
                         battlelv();
                     }
-                    else if (skill_P1 == 6 && skill_P1 == 8)
+                    else if (skill_P1 >= 6 && skill_P1 <= 8)
                     {
                         usedskill(skill_P1, 0);
                         updatenewlv();
                     }
 
-                    else if (skill_P1 != 7)
+                    else 
                     {
                         usedskill(skill_P1, 0);
                         updatenewlv();
                         battlelv();
                     }
-                    else
-                    {
-                        usedskill(skill_P1, 0);
-                        updatenewlv();
-                    }
+                   
                 }
                 else
                 {
@@ -669,22 +654,17 @@ namespace chuppy_useless_species
                         updatenewlv();
                         battlelv();
                     }
-                    else if (skill_P2 == 6 && skill_P2==8)
+                    else if (skill_P2 >= 6 && skill_P2<=8)
                     {
                         usedskill(skill_P2, 1);
                         updatenewlv();
                     }
-                    else if(skill_P2 != 7)
+                    else 
                     {
                         usedskill(skill_P2, 1);
                         updatenewlv();
                         battlelv();
-                    }
-                    else
-                    {
-                        usedskill(skill_P2, 1);
-                        updatenewlv();
-                    }
+                    }                 
                 }
             }
             else
@@ -702,15 +682,15 @@ namespace chuppy_useless_species
         {
            if(fighter[0].Level>fighter[1].Level)
             {
-                winstate.Text = " Card of P1 is Win ";
+              MessageBox.Show(" Card of P1 is Win ");
             }
            else if(fighter[0].Level<fighter[1].Level)
             {
-                winstate.Text = " Card of P2 is Win ";
+                MessageBox.Show(" Card of P2 is Win ");
             }
            else
             {
-                winstate.Text = " Draw ";
+                MessageBox.Show("Draw");
             }
         }
          
@@ -820,14 +800,15 @@ namespace chuppy_useless_species
                     }
                     break;
                   case 6: // END Battle 
-                        
+                    MessageBox.Show("Get back all Card");
+                    fighter[1].Level = fighter[0].Level = 0;
                     break;
                   case 7: //อมตะฆ่าไม่ตาย    
                     if(player==0)
                     {
                         if (fighter[0].Level <= fighter[1].Level)
                         {
-                           
+                            winstate.Text = "P1 undying";
                         }
                         else
                         {
@@ -838,7 +819,7 @@ namespace chuppy_useless_species
                     {
                         if (fighter[1].Level <= fighter[0].Level)
                         {
-                           
+                            winstate.Text = "P2 undying";
                         }
                         else
                         {
@@ -853,6 +834,7 @@ namespace chuppy_useless_species
                     m._player[1].mydeck.decard(p2_numcard);
                     m._player[0].mydeck.decard(p1_numcard);
 
+                    winstate.Text = "Bomb all Hero";
                     break;
                   case 9: // ดูดพลัง 2
                     if (player == 0)
@@ -993,13 +975,13 @@ namespace chuppy_useless_species
             shufflecard();
 
             textbattle();
-
             skill_P1 = skill_P2 = 0;
-            if (m._player[0].mydeck.Card[0].Level == 0 && m._player[0].mydeck.Card[1].Level == 0 && m._player[0].mydeck.Card[2].Level == 0 && m._player[0].mydeck.Card[3].Level == 0 && m._player[0].mydeck.Card[4].Level == 0 && m._player[0].mydeck.Card[5].Level == 0)
+
+            if (m._player[0].mydeck.Card[0].Level == 0 && m._player[0].mydeck.Card[1].Level == 0 && m._player[0].mydeck.Card[2].Level == 0 && m._player[0].mydeck.Card[3].Level == 0 && m._player[0].mydeck.Card[4].Level == 0 )
             {
                 end.Show();
             }
-            else if (m._player[1].mydeck.Card[0].Level == 0 && m._player[1].mydeck.Card[1].Level == 0 && m._player[1].mydeck.Card[2].Level == 0 && m._player[1].mydeck.Card[3].Level == 0 && m._player[1].mydeck.Card[4].Level == 0 && m._player[1].mydeck.Card[5].Level == 0)
+            else if (m._player[1].mydeck.Card[0].Level == 0 && m._player[1].mydeck.Card[1].Level == 0 && m._player[1].mydeck.Card[2].Level == 0 && m._player[1].mydeck.Card[3].Level == 0 && m._player[1].mydeck.Card[4].Level == 0 )
             { end.Show(); }
             else
             {

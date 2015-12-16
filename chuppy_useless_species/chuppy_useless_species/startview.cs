@@ -19,7 +19,9 @@ namespace chuppy_useless_species
         {
             InitializeComponent();
             opengame.Show();
-            skillpic.Hide();
+            skillpic.Hide();      
+               text_turn.Hide();
+           
         }
         public void Notify()
         {
@@ -85,8 +87,17 @@ namespace chuppy_useless_species
             m = c.notifymodeltoview();
             Notify();
             gameview.setclan(1);
+            if (c.checkp1())
+            {
+                text_deck.Text = "Player 2 Select Deck";
+            }
             pictureBox1.Image = chuppy_useless_species.Properties.Resources.human_cover_c;
-            pictureBox1.Hide();          
+            pictureBox1.Hide();
+            if (c.checkselectdeck())
+            {
+                text_deck.Hide();
+                text_turn.Show();
+            }
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -100,8 +111,17 @@ namespace chuppy_useless_species
             m = c.notifymodeltoview();
             Notify();
             gameview.setclan(2);
+            if (c.checkp1())
+            {
+                text_deck.Text = "Player 2 Select Deck";
+            }
             pictureBox8.Hide();
             pictureBox1.Image = chuppy_useless_species.Properties.Resources.human_cover;
+            if (c.checkselectdeck())
+            {
+                text_deck.Hide();
+                text_turn.Show();
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -110,8 +130,17 @@ namespace chuppy_useless_species
             m = c.notifymodeltoview();
             Notify();
             gameview.setclan(3);
+            if (c.checkp1())
+            {
+                text_deck.Text = "Player 2 Select Deck";
+            }
             pictureBox3.Hide();
             pictureBox1.Image = chuppy_useless_species.Properties.Resources.human_cover;
+            if (c.checkselectdeck())
+            {
+                text_deck.Hide();
+                text_turn.Show();
+            }
         }
 
         private void pictureBox2_Click_1(object sender, EventArgs e)
@@ -120,8 +149,17 @@ namespace chuppy_useless_species
             m = c.notifymodeltoview();
             Notify();
             gameview.setclan(4);
+            if (c.checkp1())
+            {
+                text_deck.Text = "Player 2 Select Deck";
+            }
             pictureBox2.Hide();
             pictureBox1.Image = chuppy_useless_species.Properties.Resources.human_cover;
+            if (c.checkselectdeck())
+            {
+                text_deck.Hide();
+                text_turn.Show();
+            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -130,8 +168,20 @@ namespace chuppy_useless_species
             m = c.notifymodeltoview();
             Notify();
             gameview.setclan(5);
+            if(c.checkp1())
+            {
+                text_deck.Text = "Player 2 Select Deck";
+            }
+
             pictureBox5.Hide();
             pictureBox1.Image = chuppy_useless_species.Properties.Resources.human_cover;
+            if(c.checkselectdeck())
+            {
+                text_deck.Hide();
+                text_turn.Show();
+            }
+            
+
         }
 
         private void confirmselect_Click(object sender, EventArgs e)
@@ -309,6 +359,11 @@ namespace chuppy_useless_species
         }
 
         private void opengame_Click_1(object sender, EventArgs e)
+        {
+            opengame.Hide();
+        }
+
+        private void opengame_Click_2(object sender, EventArgs e)
         {
             opengame.Hide();
         }

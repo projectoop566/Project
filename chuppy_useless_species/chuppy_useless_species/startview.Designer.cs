@@ -59,6 +59,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.skillpic = new System.Windows.Forms.PictureBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.text_deck = new System.Windows.Forms.Label();
             this.opengame = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_skill10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_skill9)).BeginInit();
@@ -173,17 +174,17 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
             this.label8.ForeColor = System.Drawing.Color.Blue;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label8.Location = new System.Drawing.Point(538, 305);
+            this.label8.Location = new System.Drawing.Point(538, 330);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(148, 25);
+            this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 30;
-            this.label8.Text = "Select skill : ";
+            this.label8.Text = "Turn Select :";
             // 
             // text_turn
             // 
             this.text_turn.AutoSize = true;
             this.text_turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.text_turn.Location = new System.Drawing.Point(692, 305);
+            this.text_turn.Location = new System.Drawing.Point(692, 330);
             this.text_turn.Name = "text_turn";
             this.text_turn.Size = new System.Drawing.Size(197, 25);
             this.text_turn.TabIndex = 31;
@@ -385,7 +386,7 @@
             // 
             this.skillpic.BackColor = System.Drawing.Color.White;
             this.skillpic.Image = ((System.Drawing.Image)(resources.GetObject("skillpic.Image")));
-            this.skillpic.Location = new System.Drawing.Point(451, 0);
+            this.skillpic.Location = new System.Drawing.Point(495, -155);
             this.skillpic.Name = "skillpic";
             this.skillpic.Size = new System.Drawing.Size(556, 420);
             this.skillpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -403,16 +404,26 @@
             this.linkLabel2.Text = "Hide";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // text_deck
+            // 
+            this.text_deck.AutoSize = true;
+            this.text_deck.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.text_deck.Location = new System.Drawing.Point(692, 330);
+            this.text_deck.Name = "text_deck";
+            this.text_deck.Size = new System.Drawing.Size(212, 25);
+            this.text_deck.TabIndex = 37;
+            this.text_deck.Text = "Player 1 Select Deck";
+            // 
             // opengame
             // 
             this.opengame.Image = ((System.Drawing.Image)(resources.GetObject("opengame.Image")));
-            this.opengame.Location = new System.Drawing.Point(-6, 0);
+            this.opengame.Location = new System.Drawing.Point(-7, -4);
             this.opengame.Name = "opengame";
-            this.opengame.Size = new System.Drawing.Size(1129, 436);
+            this.opengame.Size = new System.Drawing.Size(1129, 441);
             this.opengame.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.opengame.TabIndex = 36;
+            this.opengame.TabIndex = 38;
             this.opengame.TabStop = false;
-            this.opengame.Click += new System.EventHandler(this.opengame_Click_1);
+            this.opengame.Click += new System.EventHandler(this.opengame_Click_2);
             // 
             // startview
             // 
@@ -421,6 +432,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1117, 432);
             this.Controls.Add(this.opengame);
+            this.Controls.Add(this.text_deck);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.skillpic);
             this.Controls.Add(this.linkLabel1);
@@ -508,6 +520,7 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox skillpic;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label text_deck;
         private System.Windows.Forms.PictureBox opengame;
     }
 }

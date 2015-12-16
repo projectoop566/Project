@@ -35,6 +35,29 @@ namespace chuppy_useless_species
             }
                 
         }
+        public bool checkp1()
+        {
+            if(checkselectP1==true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool checkselectdeck()
+        {
+            if(checkselectP1 && checkselectP2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+       
         public void selectclan(int c)
         {
             if (checkselectP1 == false)
@@ -124,22 +147,7 @@ namespace chuppy_useless_species
             m._player[1].mydeck.shuffle();
             m._player[0].mydeck.shuffle();
         }
-        public void select()
-        {
-        
-        }
-        public void reselect()
-        {
-
-        }
-        public void skill()
-        {
-
-        }
-        public void startfight()
-        {
-
-        }      
+          
 
     }
 }
