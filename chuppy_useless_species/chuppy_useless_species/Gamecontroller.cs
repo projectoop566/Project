@@ -108,10 +108,7 @@ namespace chuppy_useless_species
                 selectedskill_p2 = true;
             }
         }
-        public void startbutton()
-        {
-
-        }
+       
         public void P1resetbutton()
         {
             if (checkselectP1 == true)

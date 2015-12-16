@@ -15,9 +15,10 @@ namespace chuppy_useless_species
         public  int[] myskill  = new int[3];
         
         public Deck mydeck = new Deck();
+
+        public int losscard=0;
+
        
-       
-               
         public string Name
         {
             get { return _Name; }
@@ -53,6 +54,10 @@ namespace chuppy_useless_species
         {
             _Winscore = _Winscore + 1;
         }
-        
+        public void loss()
+        {
+            losscard = losscard+1;
+        }
+
     }
 }

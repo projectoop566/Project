@@ -15,6 +15,8 @@ namespace chuppy_useless_species
     {
         model m = new model();
         Gamecontroller c = new Gamecontroller();
+       
+
         //image
         bool checkp1_turn = true;
         bool checkp1_selectcard_battle =false;
@@ -396,17 +398,17 @@ namespace chuppy_useless_species
                                           
                         if(player==0)
                         {              
-                            if(fighter[1].Level == 2)
+                            if(fighter[1].Level == 3)
                             {
-                                fighter[0].Level = fighter[0].Level + 1;
+                                fighter[0].Level = fighter[0].Level + 2;
                                 p1cardskill.Text = "Passive Skill : LV +1";
                             }
                         }
                         else
                         {
-                            if (fighter[0].Level == 2)
+                            if (fighter[0].Level == 3)
                             {
-                                fighter[1].Level = fighter[1].Level + 1;
+                                fighter[1].Level = fighter[1].Level + 2;
                                 p2cardskill.Text = "Passive Skill : LV +1";
                         }
                         }
@@ -802,6 +804,7 @@ namespace chuppy_useless_species
                   case 6: // END Battle 
                     MessageBox.Show("Get back all Card");
                     fighter[1].Level = fighter[0].Level = 0;
+                
                     break;
                   case 7: //อมตะฆ่าไม่ตาย    
                     if(player==0)
@@ -811,7 +814,7 @@ namespace chuppy_useless_species
                             winstate.Text = "P1 undying";
                         }
                         else
-                        {
+                        {                         
                             battlelv();
                         }
                     }
@@ -833,8 +836,10 @@ namespace chuppy_useless_species
                     deletecard(2);
                     m._player[1].mydeck.decard(p2_numcard);
                     m._player[0].mydeck.decard(p1_numcard);
-
+                    MessageBox.Show("Bomb all Hero");
                     winstate.Text = "Bomb all Hero";
+                    m._player[0].loss();
+                    m._player[1].loss();
                     break;
                   case 9: // ดูดพลัง 2
                     if (player == 0)
@@ -859,8 +864,7 @@ namespace chuppy_useless_species
                         fighter[1].Level = fighter[1].Level + 2;
                     }
                     break;
-            }
-                                 
+            }                               
         }
 
         public void battlelv()
@@ -874,6 +878,7 @@ namespace chuppy_useless_species
                     m._player[1].mydeck.decard(p2_numcard);
                     deletecard(2);
                     updatescore();
+                    m._player[0].loss();
                 }
                 else
                 {
@@ -881,6 +886,7 @@ namespace chuppy_useless_species
                     m._player[0].mydeck.decard(p1_numcard);
                     deletecard(1);
                     updatescore();
+                    m._player[1].loss();
                 }
             }
             else
@@ -977,11 +983,11 @@ namespace chuppy_useless_species
             textbattle();
             skill_P1 = skill_P2 = 0;
 
-            if (m._player[0].mydeck.Card[0].Level == 0 && m._player[0].mydeck.Card[1].Level == 0 && m._player[0].mydeck.Card[2].Level == 0 && m._player[0].mydeck.Card[3].Level == 0 && m._player[0].mydeck.Card[4].Level == 0 )
+            if (m._player[0].losscard==5)
             {
                 end.Show();
             }
-            else if (m._player[1].mydeck.Card[0].Level == 0 && m._player[1].mydeck.Card[1].Level == 0 && m._player[1].mydeck.Card[2].Level == 0 && m._player[1].mydeck.Card[3].Level == 0 && m._player[1].mydeck.Card[4].Level == 0 )
+            else if (m._player[0].losscard == 5)
             { end.Show(); }
             else
             {
