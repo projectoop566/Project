@@ -17,7 +17,9 @@ namespace chuppy_useless_species
         Form1 gameview = new Form1(); 
         public startview()
         {
-            InitializeComponent();                
+            InitializeComponent();
+            opengame.Show();
+            skillpic.Hide();
         }
         public void Notify()
         {
@@ -84,7 +86,7 @@ namespace chuppy_useless_species
             Notify();
             gameview.setclan(1);
             pictureBox1.Image = chuppy_useless_species.Properties.Resources.human_cover_c;
-            pictureBox1.Hide();
+            pictureBox1.Hide();          
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -288,6 +290,27 @@ namespace chuppy_useless_species
         private void text_turn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void opengame_Click(object sender, EventArgs e)
+        {
+            opengame.Hide();
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            skillpic.Show();
+            
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            skillpic.Hide();
+        }
+
+        private void opengame_Click_1(object sender, EventArgs e)
+        {
+            opengame.Hide();
         }
     }
 }

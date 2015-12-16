@@ -63,6 +63,16 @@ namespace chuppy_useless_species.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backcard {
+            get {
+                object obj = ResourceManager.GetObject("backcard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_select {
             get {
                 object obj = ResourceManager.GetObject("bg_select", resourceCulture);

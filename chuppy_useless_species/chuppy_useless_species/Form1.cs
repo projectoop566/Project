@@ -43,17 +43,21 @@ namespace chuppy_useless_species
         int skill_P1 = 0;
         int skill_P2 = 0;
 
-        public Form1()
-        {
-            InitializeComponent();
-            m = c.notifymodeltoview();
-            battle_button.Hide();
-            p1_Select.Hide();
-            P2_Select.Hide();
+        //cardskill                                //มนุษ 1 เจอเวลสาม +lv1
+        int[] cardskill = new int[10];             //มนุษสอง 2 ไบ้  
+                                                    // แมลง 3  : เวล 3 เจอเวล  2 ตาย 
+                                                    // แมลง 4 : เจอเวล 1 ตาย
+        public Form1()                              //ยัก 5 : ตีกับเวลสาม ชนะ 
+        {                                           //ob 6 : เวลสองตีเวลสองชนะ
+            InitializeComponent();                      // spirit 7 attack น้อยกว่า +2
+            m = c.notifymodeltoview();                  // spirit 8 attack น้อย + 1
+            battle_button.Hide();                           //9 lv 2  ตายเมื่อสู้ LV 2 
+            p1_Select.Hide();                               //10 lv 1  ตายเมื่อสู้ LV 2
+            P2_Select.Hide();                               //11 lv 1  ตายเมื่อสู้ LV 2
             start.Hide();
-            next_button.Hide();           
-          
-        }  
+            next_button.Hide();
+            end.Hide();
+        }                               
         //show pic of skill 
         public void showskill()
         {
@@ -71,34 +75,34 @@ namespace chuppy_useless_species
             switch (skillnum)
             {
                 case 1:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_uplevel2.png");
                     break;
                 case 2:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_stillhp1.png");
                     break;
                 case 3:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/reversel_inbox.png");
                     break;
                 case 4:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_uplevel1.png");
                     break;
                 case 5:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_slience.png");
                     break;
                 case 6:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/endl_inbox.png");
                     break;
                 case 7:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_immune.png");
                     break;
                 case 8:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_boom.png");
                     break;
                 case 9:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_stillhp2.png");
                     break;
                 case 10:
-                    m = Image.FromFile(@"../../images/bgcard.png");
+                    m = Image.FromFile(@"../../images/button/skill/skill_inbox/skill_master.png");
                     break;
             }
             return m;
@@ -154,29 +158,28 @@ namespace chuppy_useless_species
             winscore1.Text = ""+m._player[0].Winscore;
             winscore2.Text = ""+m._player[1].Winscore;
         }
-        public void updateskill()
-        {
-
-        }
-        public void fightwindow()
-        {
-
-        }
+      
+        
         public void nameclan()
         {
             player1clan.Text = m.getclan(0);
             player2clan.Text = m.getclan(1);
-        }
-        public void clanpic()
+        }      
+       
+        //Card Skill
+        public void updatecardskill()
         {
-           
-          
+            cardskill[0] = m._player[0].mydeck.Card[0].cskill;
+            cardskill[1] = m._player[0].mydeck.Card[1].cskill;
+            cardskill[2] = m._player[0].mydeck.Card[2].cskill;
+            cardskill[3] = m._player[0].mydeck.Card[3].cskill;
+            cardskill[4] = m._player[0].mydeck.Card[4].cskill;
+            cardskill[5] = m._player[1].mydeck.Card[0].cskill;
+            cardskill[6] = m._player[1].mydeck.Card[1].cskill;
+            cardskill[7] = m._player[1].mydeck.Card[2].cskill;
+            cardskill[8] = m._player[1].mydeck.Card[3].cskill;
+            cardskill[9] = m._player[1].mydeck.Card[4].cskill;         
         }
-        public void notify()
-        {
-      
-        }
-
 
         //input view
         private void Form1_Load(object sender, EventArgs e)
@@ -236,6 +239,7 @@ namespace chuppy_useless_species
 
         private void start_Click(object sender, EventArgs e)
         {
+            updatecardskill();
             //Hide show button
             showc.Enabled = false;
             showc.Hide();
@@ -356,30 +360,378 @@ namespace chuppy_useless_species
             }
             
         }
+
+        public void  runcardskill(int x,int player)//0,1
+        {        
+            switch (x)
+            {
+                case 1:
+                    if(player == 0)
+                    {
+                        if(fighter[1].Level == 3)
+                        {
+                            fighter[0].Level = fighter[0].Level + 1;
+                            p1cardskill.Text = "Passive Skill : LV +1 ";
+                        }                    
+                    }
+                    else
+                    {
+                        fighter[1].Level = fighter[0].Level + 1;
+                        p2cardskill.Text = "Passive Skill : LV +1 ";
+                    }                                    
+                    break;
+                case 2:
+                    if (player == 0)
+                    {
+                        skill_P2 = 0;
+                        p1cardskill.Text = "Passive Skill : Silent Player 2 skill";
+                    }
+                    else
+                    {
+                        skill_P1 = 0;
+                        p2cardskill.Text = "Passive Skill : Silent Player 1 skill";
+                    }
+                    break;
+                case 3:
+                                          
+                        if(player==0)
+                        {              
+                            if(fighter[1].Level == 2)
+                            {
+                                fighter[0].Level = fighter[0].Level + 1;
+                                p1cardskill.Text = "Passive Skill : LV +1";
+                            }
+                        }
+                        else
+                        {
+                            if (fighter[0].Level == 2)
+                            {
+                                fighter[1].Level = fighter[1].Level + 1;
+                                p2cardskill.Text = "Passive Skill : LV +1";
+                        }
+                        }
+                                     
+                    break;
+                case 4:
+                   
+                        if (player == 0)
+                        {
+                            if (fighter[1].Level == 1)
+                            {
+                                fighter[0].Level = fighter[0].Level + 1;
+                            p1cardskill.Text = "Passive Skill : LV +1";
+                        }
+                        }
+                        else
+                        {
+                            if (fighter[0].Level == 1)
+                            {
+                                fighter[1].Level = fighter[1].Level + 1;
+                            p2cardskill.Text = "Passive Skill : LV +1";
+                        }
+                        }              
+                    break;
+                   
+                case 5:
+                  
+                    if (player == 0)
+                    {
+                       if(fighter[0].Level == fighter[1].Level)
+                        {
+                            fighter[1].Level = fighter[1].Level - 1;
+                            p1cardskill.Text = "Passive Skill :P2 LV -1";
+                        }
+                    }
+                    else
+                    {
+                        if (fighter[1].Level == fighter[0].Level)
+                        {
+                            fighter[0].Level = fighter[0].Level - 1;
+                            p2cardskill.Text = "Passive Skill :P1 LV -1";
+                        }
+                    }                
+                    break;
+                case 6:
+                    if (player == 0)
+                    {
+                        if (fighter[0].Level == fighter[1].Level)
+                        {
+                            fighter[1].Level = fighter[1].Level - 1;
+                            p1cardskill.Text = "Passive Skill :P2 LV -1";
+                        }
+                    }
+                    else
+                    {
+                        if (fighter[1].Level == fighter[0].Level)
+                        {
+                            fighter[0].Level = fighter[0].Level - 1;
+                            p2cardskill.Text = "Passive Skill :P1 LV -1";
+                        }
+                    }
+                    break;
+                case 7:
+                    if (player == 0)
+                    {
+                        if (fighter[1].Level > fighter[0].Level)
+                        {
+                            fighter[0].Level = fighter[0].Level + 2;
+                            p1cardskill.Text = "Passive Skill :LV +2";
+                        }                       
+                    }
+                    else
+                    {
+                        if (fighter[1].Level < fighter[0].Level)
+                        {
+                            fighter[1].Level = fighter[1].Level + 2;
+                            p2cardskill.Text = "Passive Skill :LV +2";
+                        }                       
+                    }                 
+                    break;
+                case 8:
+                    if (player == 0)
+                    {
+                        if (fighter[1].Level > fighter[0].Level)
+                        {
+                            fighter[0].Level = fighter[0].Level + 1;
+                            p1cardskill.Text = "Passive Skill :LV +1";
+                        }
+                        
+                    }
+                    else
+                    {
+                        if (fighter[1].Level < fighter[0].Level)
+                        {
+                            fighter[1].Level = fighter[1].Level + 1;
+                            p2cardskill.Text = "Passive Skill :LV +1";
+                        }
+                       
+                    }                 
+                    break;
+                case 9:
+                    if (player == 0)
+                    {
+                        if (fighter[1].Level == 2)
+                        {
+                            fighter[0].Level = fighter[0].Level + 1;
+                            p1cardskill.Text = "Passive Skill :LV +1";
+                        }
+                    }
+                    else
+                    {
+                        if (fighter[0].Level == 2)
+                        {
+                            fighter[1].Level = fighter[0].Level + 1;
+                            p2cardskill.Text = "Passive Skill :LV +1";
+                        }
+                    }                
+                    break;
+                case 10:
+                    if (player == 0)
+                    {
+                        if (fighter[1].Level == 1)
+                        {
+                            fighter[0].Level = fighter[0].Level + 1;
+                            p1cardskill.Text = "Passive Skill :LV +1";
+                        }
+                    }
+                    else
+                    {
+                        if (fighter[0].Level == 1)
+                        {
+                            fighter[1].Level = fighter[0].Level + 1;
+                            p2cardskill.Text = "Passive Skill :LV +1";
+                        }
+                    }                
+                    break;
+                case 11:
+                    if (player == 0)
+                    {
+                        if (fighter[1].Level == 1)
+                        {
+                            fighter[0].Level = fighter[0].Level + 1;
+                            p1cardskill.Text = "Passive Skill :LV +1";
+                        }                     
+                    }
+                    else
+                    {
+                        if (fighter[0].Level == 1)
+                        {
+                            fighter[1].Level = fighter[0].Level + 1;
+                            p2cardskill.Text = "Passive Skill :LV +1";
+                        }                                           
+                    }                  
+                    break;
+                default:                  
+                    break;
+
+            }
+
+        }
+
         private void battlestart()
         {
-            if(skill_P1 != 0 || skill_P2 != 0)
-            {
-                
-            }
-            updatetextandpic();
-            battlelv();
+            int attack1;
+            int attack2;
+            attack1 = fighter[0].Level;
+            attack2 = fighter[1].Level;
 
+            updatetextandpic();
+         
+                runcardskill(fighter[0].cskill,0);
+                runcardskill(fighter[1].cskill,1);
+
+            if (skill_P1 != 0 || skill_P2 != 0)
+            {
+                if (skill_P1 != 0 && skill_P2 != 0)
+                {
+                    if (skill_P1 == 5 || skill_P2 == 5)
+                    {
+                        if (skill_P1 == 5)
+                        {
+                            usedskill(skill_P1, 0);
+                        }
+                        else
+                        {
+                            usedskill(skill_P2, 1);
+                        }
+                        updatenewlv();
+                        battlelv();
+                    }
+                    else if ((skill_P1 == 6 && skill_P1 == 8)|| (skill_P2 == 6 && skill_P2 == 8))
+                    {
+                        if ((skill_P1 ==6 && skill_P1<=8) && (skill_P2!=6 || skill_P2!=8))
+                        {
+                            usedskill(skill_P1, 0);
+                        }
+                        else
+                        {
+                            usedskill(skill_P2, 1);
+                        }
+                        updatenewlv();
+                    }
+                    else if(skill_P1 != 7 || skill_P2 != 7)
+                    {
+                        usedskill(skill_P1, 0);
+                        usedskill(skill_P2, 1);
+                        updatenewlv();
+                        battlelv();
+                    }
+                    else
+                    {
+                        if(skill_P1==7)
+                        {
+                            usedskill(skill_P1, 0);
+                          
+                        }
+                        else
+                        {
+                            usedskill(skill_P2, 1);
+                        }
+                    }
+                }
+                else if (skill_P1 != 0 && skill_P2 == 0)
+                {
+                    if (skill_P1 == 5)
+                    {
+                        if (skill_P1 == 5)
+                        {
+                            usedskill(skill_P1, 0);
+                        }
+                        updatenewlv();
+                        battlelv();
+                    }
+                    else if (skill_P1 == 6 && skill_P1 == 8)
+                    {
+                        usedskill(skill_P1, 0);
+                        updatenewlv();
+                    }
+
+                    else if (skill_P1 != 7)
+                    {
+                        usedskill(skill_P1, 0);
+                        updatenewlv();
+                        battlelv();
+                    }
+                    else
+                    {
+                        usedskill(skill_P1, 0);
+                        updatenewlv();
+                    }
+                }
+                else
+                {
+                    if (skill_P2 == 5)
+                    {
+                        if (skill_P2 == 5)
+                        {
+                            usedskill(skill_P2, 1);
+                        }
+                        updatenewlv();
+                        battlelv();
+                    }
+                    else if (skill_P2 == 6 && skill_P2==8)
+                    {
+                        usedskill(skill_P2, 1);
+                        updatenewlv();
+                    }
+                    else if(skill_P2 != 7)
+                    {
+                        usedskill(skill_P2, 1);
+                        updatenewlv();
+                        battlelv();
+                    }
+                    else
+                    {
+                        usedskill(skill_P2, 1);
+                        updatenewlv();
+                    }
+                }
+            }
+            else
+            {
+                p1text_skill.Text = textofskill(skill_P1);
+                p2text_skill.Text = textofskill(skill_P2);
+                updatenewlv();
+                battlelv();
+            }
+            whowin();
+            fighter[0].Level = attack1;
+            fighter[1].Level = attack2;
+        }
+        public void whowin()
+        {
+           if(fighter[0].Level>fighter[1].Level)
+            {
+                winstate.Text = " Card of P1 is Win ";
+            }
+           else if(fighter[0].Level<fighter[1].Level)
+            {
+                winstate.Text = " Card of P2 is Win ";
+            }
+           else
+            {
+                winstate.Text = " Draw ";
+            }
+        }
+         
+        public void updatenewlv()
+        {                              
+                p1_newlv.Text = "New LV : " + fighter[0].Level;
+                p2_newlv.Text = "New LV : " + fighter[1].Level;                                                            
         }
         public void updatetextandpic()
         {
             p1_battlepic.Show();
             p2_battlepic.Show();
-            
-
             p1_lvcard.Text = "LV Card : " + fighter[0].Level;
             p2_lvcard.Text = "LV Card : " + fighter[1].Level;
-            p1_battlepic.Image = fighter[0].imagebattlecard;
-            p2_battlepic.Image = fighter[1].imagebattlecard;
+
             p1text_skill.Text = textofskill(skill_P1);
             p2text_skill.Text = textofskill(skill_P2);
 
-
+            p1_battlepic.Image = fighter[0].imagebattlecard;
+            p2_battlepic.Image = fighter[1].imagebattlecard;
+            
         }
         
         public string textofskill(int numskill) //return label of skill; 
@@ -388,34 +740,34 @@ namespace chuppy_useless_species
             switch (numskill)
             {
                 case 1://lv คูณ 2
-                    y = "Time 2 of LV";
+                    y = "LV + 2 ";
                     break;
-                case 2: //สกิลดูดพลัง
-                    y = "555";
+                case 2: //สกิลดูดพลัง -1
+                    y = "Enemy's LV -1";
                     break;
-                case 3: // 
-                    y = "555";
+                case 3: //  แลก LV 
+                    y = "Swap LV";
                     break;
-                case 4:
-                    y = "555";
+                case 4://LV + 1
+                    y = "LV +1";
                     break;
-                case 5:
-                    y = "555";
+                case 5://ใบ้สกิล
+                    y = "Silent skill";
                     break;
-                case 6:
-                    y = "555";
+                case 6://END Battle 
+                    y = "END Battle";
                     break;
-                case 7:
-                    y = "555";
+                case 7:////อมตะฆ่าไม่ตาย  
+                    y = "Undying by Attack";
                     break;
                 case 8:
-                    y = "555";
+                    y = "Bomb all Hero in Battle";
                     break;
-                case 9:
-                    y = "555";
+                case 9://ดูดสกิล -2
+                    y = "Enemy's LV -2";
                     break;
                 case 10:
-                    y = "555";
+                    y = "My LV +2 ,Enemy's LV +1";
                     break;
                 default:
                     break;
@@ -428,19 +780,17 @@ namespace chuppy_useless_species
             
                 switch(n)  
                 {
-                  case 1://lv คูณ 2
-                        fighter[player].Level = fighter[player].Level * 2;
+                  case 1://lv + 2
+                        fighter[player].Level = fighter[player].Level +2;
                     break;
-                  case 2: //สกิลดูดพลัง
-                        if(player == 0)
-                        {
-                        fighter[1].Level = fighter[1].Level - 1;
-                        fighter[player].Level = fighter[player].Level + 1;
-                        }
-                        else
-                        {
-                        fighter[0].Level = fighter[0].Level - 1;
-                        fighter[player].Level = fighter[player].Level + 1;
+                  case 2: //สกิลดูดพลัง-1
+                    if (player == 0)
+                    {                      
+                            fighter[1].Level = fighter[1].Level - 1;                      
+                    }
+                    else
+                    {                     
+                            fighter[0].Level = fighter[0].Level - 1;                        
                     }                                      
                     break;
                   case 3: // แลก LV 
@@ -450,32 +800,82 @@ namespace chuppy_useless_species
                         fighter[player].Level = fighter[1].Level;
                         fighter[1].Level = temp;                      
                     }
-                    else
+                    else 
                     {
                         fighter[player].Level = fighter[0].Level;
                         fighter[0].Level = temp;
                     }
                     break;
-                  case 4://
-                    fighter[player].Level = fighter[player].Level * 2;
+                  case 4:// LV + 1
+                    fighter[player].Level = fighter[player].Level +1;
                     break;
-                  case 5:
-                    fighter[player].Level = fighter[player].Level * 2;
+                  case 5: // ใบ้ skill 
+                        if(player==0)
+                    {
+                        skill_P2 = 0;
+                    }
+                        else
+                    {
+                        skill_P1 = 0;
+                    }
                     break;
-                  case 6:
-                    fighter[player].Level = fighter[player].Level * 2;
+                  case 6: // END Battle 
+                        
                     break;
-                  case 7:
-                    fighter[player].Level = fighter[player].Level * 2;
+                  case 7: //อมตะฆ่าไม่ตาย    
+                    if(player==0)
+                    {
+                        if (fighter[0].Level <= fighter[1].Level)
+                        {
+                           
+                        }
+                        else
+                        {
+                            battlelv();
+                        }
+                    }
+                    if (player == 1)
+                    {
+                        if (fighter[1].Level <= fighter[0].Level)
+                        {
+                           
+                        }
+                        else
+                        {
+                            battlelv();
+                        }
+                    }
+
                     break;
-                  case 8:
-                    fighter[player].Level = fighter[player].Level * 2;
+                  case 8: // ระเบิดตัวเอง (ตายคู่)
+                    deletecard(1);
+                    deletecard(2);
+                    m._player[1].mydeck.decard(p2_numcard);
+                    m._player[0].mydeck.decard(p1_numcard);
+
                     break;
-                  case 9:
-                    fighter[player].Level = fighter[player].Level * 2;
-                    break;
-                  case 10:
-                    fighter[player].Level = fighter[player].Level * 2;
+                  case 9: // ดูดพลัง 2
+                    if (player == 0)
+                    {                                         
+                                fighter[1].Level = fighter[1].Level - 2;
+                                                                  
+                    }
+                    else
+                    {                    
+                            fighter[0].Level = fighter[0].Level - 2;                      
+                    }
+                        break;
+                  case 10: // เพิ่มหลังให้ตัวเอง 2 บริจาคพลังให้ฝ่ายตรงข้าม 1
+                    if (player == 0)
+                    {
+                        fighter[1].Level = fighter[1].Level + 1;
+                        fighter[0].Level = fighter[0].Level + 2;
+                    }
+                    else
+                    {
+                        fighter[0].Level = fighter[0].Level + 1;
+                        fighter[1].Level = fighter[1].Level + 2;
+                    }
                     break;
             }
                                  
@@ -506,6 +906,7 @@ namespace chuppy_useless_species
 
             }
         }
+
         private void p1_battlepic_Click(object sender, EventArgs e)
         {
 
@@ -572,7 +973,8 @@ namespace chuppy_useless_species
             p1_lvcard.Text = "...";
             p2_lvcard.Text = "...";
             p2text_skill.Text = "...";
-            p1text_skill.Text = "...";
+            p2_newlv.Text = p1_newlv.Text = p1text_skill.Text = "...";
+            p1cardskill.Text = p2cardskill.Text = "... ";
          
         }
 
@@ -583,6 +985,9 @@ namespace chuppy_useless_species
             checkp2_selectcard_battle = false;
             p1_battlepic.Hide();
             p2_battlepic.Hide();
+
+            winstate.Text = "   ";
+
             next_button.Hide();
             updatecard();
             shufflecard();
@@ -590,7 +995,16 @@ namespace chuppy_useless_species
             textbattle();
 
             skill_P1 = skill_P2 = 0;
+            if (m._player[0].mydeck.Card[0].Level == 0 && m._player[0].mydeck.Card[1].Level == 0 && m._player[0].mydeck.Card[2].Level == 0 && m._player[0].mydeck.Card[3].Level == 0 && m._player[0].mydeck.Card[4].Level == 0 && m._player[0].mydeck.Card[5].Level == 0)
+            {
+                end.Show();
+            }
+            else if (m._player[1].mydeck.Card[0].Level == 0 && m._player[1].mydeck.Card[1].Level == 0 && m._player[1].mydeck.Card[2].Level == 0 && m._player[1].mydeck.Card[3].Level == 0 && m._player[1].mydeck.Card[4].Level == 0 && m._player[1].mydeck.Card[5].Level == 0)
+            { end.Show(); }
+            else
+            {
 
+            }
         }
 
         public void shufflecard()
@@ -767,7 +1181,7 @@ namespace chuppy_useless_species
             if (skill_P2 == 0 && checkp1_turn==false)
             {
                 p2_skill1.Hide();
-                skill_P2 = m._player[0].myskill[0];
+                skill_P2 = m._player[1].myskill[0];
             }
         }
 
@@ -776,7 +1190,7 @@ namespace chuppy_useless_species
             if (skill_P2 == 0 && checkp1_turn == false)
             {
                 p2_skill2.Hide();
-                skill_P2 = m._player[0].myskill[1];
+                skill_P2 = m._player[1].myskill[1];
             }
         }
 
@@ -785,7 +1199,7 @@ namespace chuppy_useless_species
             if (skill_P2 == 0 && checkp1_turn == false)
             {
                 p2_skill3.Hide();
-                skill_P2 = m._player[0].myskill[2];
+                skill_P2 = m._player[1].myskill[2];
             }
         }
     }

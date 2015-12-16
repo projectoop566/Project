@@ -100,15 +100,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\bg_select.png" />
+    <Content Include="images\card\backcard.png" />
     <Content Include="images\card\button\battle.png" />
     <Content Include="images\card\button\button_exit.png" />
     <Content Include="images\card\button\button_letplay.png" />
     <Content Include="images\card\button\button_letplayt.png" />
     <Content Include="images\card\button\enter.png" />
     <Content Include="images\card\button\exit.png" />
+    <Content Include="images\card\button\let_play.png" />
     <Content Include="images\card\button\next.png" />
     <Content Include="images\card\button\showcard.png" />
+    <Content Include="images\card\button\skill\endl_inbox.png" />
+    <Content Include="images\card\button\skill\reversel_inbox.png" />
+    <Content Include="images\card\button\skill\skill_boom.png" />
+    <Content Include="images\card\button\skill\skill_immune.png" />
+    <Content Include="images\card\button\skill\skill_master.png" />
+    <Content Include="images\card\button\skill\skill_slience.png" />
+    <Content Include="images\card\button\skill\skill_stillhp1.png" />
+    <Content Include="images\card\button\skill\skill_stillhp2.png" />
+    <Content Include="images\card\button\skill\skill_uplevel1.png" />
+    <Content Include="images\card\button\skill\skill_uplevel2.png" />
     <Content Include="images\card\button\start.png" />
+    <Content Include="images\card\button\startt.png" />
     <Content Include="images\card\human\human1.png" />
     <Content Include="images\card\human\human2.png" />
     <Content Include="images\card\human\human3.png" />
@@ -143,6 +156,17 @@
     <Content Include="images\card\orge\orc_4_g.gif" />
     <Content Include="images\card\orge\orc_5_g.gif" />
     <Content Include="images\card\orge\orc_cover.png" />
+    <Content Include="images\card\spirit\spirit1.png" />
+    <Content Include="images\card\spirit\spirit2.png" />
+    <Content Include="images\card\spirit\spirit3.png" />
+    <Content Include="images\card\spirit\spirit4.png" />
+    <Content Include="images\card\spirit\spirit5.png" />
+    <Content Include="images\card\spirit\spirit_1_g.gif" />
+    <Content Include="images\card\spirit\spirit_2_g.gif" />
+    <Content Include="images\card\spirit\spirit_3_g.gif" />
+    <Content Include="images\card\spirit\spirit_4_g.gif" />
+    <Content Include="images\card\spirit\spirit_5_g.gif" />
+    <Content Include="images\card\spirit\spirit_cover.png" />
     <Content Include="images\card\spirit\sprit_lv1_1.png" />
     <Content Include="images\card\spirit\sprit_lv1_2.png" />
     <Content Include="images\card\spirit\sprit_lv2_2.png" />
@@ -166,6 +190,7 @@
   <ItemGroup>
     <None Include="images\bgcard2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

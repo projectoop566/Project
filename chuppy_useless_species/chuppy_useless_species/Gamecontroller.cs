@@ -20,8 +20,7 @@ namespace chuppy_useless_species
 
         public bool player1select = false;
         public bool playerselect = false;
-
-
+       
         //start view
 
         public bool checkstart()
@@ -78,8 +77,7 @@ namespace chuppy_useless_species
                 else
                 {
                     m._player[1].myskill[2] = skillnum;
-                    allplayerselectedskill = true;
-                   
+                    allplayerselectedskill = true;          
                 }
 
 
